@@ -2360,3 +2360,778 @@ select * from cte
 2021-12-21 09:24:41.618207 (Thread-227): handling status request
 2021-12-21 09:24:41.618577 (Thread-227): 09:24:41  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'd1c33850-30e3-411e-998d-badc6b04d1da', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f89e43bb4c0>]}
 2021-12-21 09:24:41.619038 (Thread-227): sending response (<Response 1557 bytes [200 OK]>) to 10.0.2.134
+2021-12-21 09:24:43.654794 (Thread-228): 09:24:43  Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+2021-12-21 09:24:43.654996 (Thread-228): 09:24:43  Partial parsing enabled, no changes found, skipping parsing
+2021-12-21 09:24:43.659953 (Thread-228): 09:24:43  Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'd1c33850-30e3-411e-998d-badc6b04d1da', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f89e439efd0>]}
+2021-12-21 09:24:44.355724 (Thread-229): handling status request
+2021-12-21 09:24:44.356097 (Thread-229): 09:24:44  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'd1c33850-30e3-411e-998d-badc6b04d1da', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f89e43d6100>]}
+2021-12-21 09:24:44.356555 (Thread-229): sending response (<Response 1244 bytes [200 OK]>) to 10.0.18.133
+2021-12-21 09:24:44.358726 (Thread-230): handling status request
+2021-12-21 09:24:44.358979 (Thread-230): 09:24:44  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'd1c33850-30e3-411e-998d-badc6b04d1da', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f89e43d68e0>]}
+2021-12-21 09:24:44.382500 (Thread-230): sending response (<Response 1244 bytes [200 OK]>) to 10.0.40.37
+2021-12-21 09:26:16.545650 (Thread-231): handling status request
+2021-12-21 09:26:16.547410 (Thread-231): 09:26:16  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'd1c33850-30e3-411e-998d-badc6b04d1da', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f89e452da30>]}
+2021-12-21 09:26:16.547903 (Thread-231): sending response (<Response 1244 bytes [200 OK]>) to 10.0.41.245
+2021-12-21 09:26:16.985736 (Thread-232): handling run_sql request
+2021-12-21 09:26:16.986102 (Thread-232): 09:26:16  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'd1c33850-30e3-411e-998d-badc6b04d1da', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f89e442cd00>]}
+2021-12-21 09:26:19.066622 (Thread-232): sending response (<Response 138 bytes [200 OK]>) to 10.0.18.133
+2021-12-21 09:26:19.093746 (MainThread): 09:26:19  Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '4df274d1-ff8b-4a96-aa88-e2f52165ba2f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8935096df0>]}
+2021-12-21 09:26:19.094348 (MainThread): 09:26:19  Found 7 models, 4 tests, 0 snapshots, 0 analyses, 179 macros, 0 operations, 0 seed files, 0 sources, 0 exposures, 0 metrics
+2021-12-21 09:26:19.094904 (Thread-1): 09:26:19  Acquiring new snowflake connection "rpc.jaffle_shop.request"
+2021-12-21 09:26:19.095034 (Thread-1): 09:26:19  Began compiling node rpc.jaffle_shop.request
+2021-12-21 09:26:19.095127 (Thread-1): 09:26:19  Compiling rpc.jaffle_shop.request
+2021-12-21 09:26:19.097325 (Thread-1): 09:26:19  finished collecting timing info
+2021-12-21 09:26:19.097448 (Thread-1): 09:26:19  Began executing node rpc.jaffle_shop.request
+2021-12-21 09:26:19.098584 (Thread-1): 09:26:19  Using snowflake connection "rpc.jaffle_shop.request"
+2021-12-21 09:26:19.098669 (Thread-1): 09:26:19  On rpc.jaffle_shop.request: with customers as (
+
+    select * from ANALYTICS.dbt_dsalvati.stg_customers
+
+),
+
+orders as (
+
+    select * from ANALYTICS.dbt_dsalvati.stg_orders
+
+),
+
+customer_orders as (
+
+    select
+        customer_id,
+
+        min(order_date) as first_order_date,
+        max(order_date) as most_recent_order_date,
+        count(order_id) as number_of_orders
+
+    from orders
+
+    group by 1
+
+),
+
+final as (
+
+    select
+        customers.customer_id,
+        customers.first_name,
+        customers.last_name,
+        customer_orders.first_order_date,
+        customer_orders.most_recent_order_date,
+        coalesce(customer_orders.number_of_orders, 0) as number_of_orders
+
+    from customers
+
+    left join customer_orders using (customer_id)
+
+)
+
+select * from final
+limit 500
+/* limit added automatically by dbt cloud */
+2021-12-21 09:26:19.098745 (Thread-1): 09:26:19  Opening a new connection, currently in state init
+2021-12-21 09:26:19.516775 (Thread-233): handling poll request
+2021-12-21 09:26:19.517211 (Thread-233): 09:26:19  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'd1c33850-30e3-411e-998d-badc6b04d1da', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f89e4382130>]}
+2021-12-21 09:26:19.518076 (Thread-233): sending response (<Response 4502 bytes [200 OK]>) to 10.0.2.134
+2021-12-21 09:26:20.099687 (Thread-1): 09:26:20  SQL status: SUCCESS 100 in 1.0 seconds
+2021-12-21 09:26:20.104085 (Thread-1): 09:26:20  finished collecting timing info
+2021-12-21 09:26:20.104299 (Thread-1): 09:26:20  On rpc.jaffle_shop.request: Close
+2021-12-21 09:26:20.980421 (Thread-234): handling poll request
+2021-12-21 09:26:20.980793 (Thread-234): 09:26:20  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'd1c33850-30e3-411e-998d-badc6b04d1da', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f89e43826a0>]}
+2021-12-21 09:26:20.982130 (Thread-234): sending response (<Response 11692 bytes [200 OK]>) to 10.0.12.12
+2021-12-21 09:31:42.033114 (Thread-235): handling status request
+2021-12-21 09:31:42.035186 (Thread-235): 09:31:42  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'd1c33850-30e3-411e-998d-badc6b04d1da', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f89e4382b20>]}
+2021-12-21 09:31:42.035712 (Thread-235): sending response (<Response 1244 bytes [200 OK]>) to 10.0.28.81
+2021-12-21 09:31:42.451775 (Thread-236): handling run_sql request
+2021-12-21 09:31:42.452137 (Thread-236): 09:31:42  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'd1c33850-30e3-411e-998d-badc6b04d1da', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f89e4382ca0>]}
+2021-12-21 09:31:44.531904 (Thread-236): sending response (<Response 138 bytes [200 OK]>) to 10.0.15.44
+2021-12-21 09:31:44.558534 (MainThread): 09:31:44  Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'ebd14a96-43ae-4c38-8ad9-556390b948b6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fcb8065d880>]}
+2021-12-21 09:31:44.559121 (MainThread): 09:31:44  Found 7 models, 4 tests, 0 snapshots, 0 analyses, 179 macros, 0 operations, 0 seed files, 0 sources, 0 exposures, 0 metrics
+2021-12-21 09:31:44.559694 (Thread-1): 09:31:44  Acquiring new snowflake connection "rpc.jaffle_shop.request"
+2021-12-21 09:31:44.559821 (Thread-1): 09:31:44  Began compiling node rpc.jaffle_shop.request
+2021-12-21 09:31:44.559916 (Thread-1): 09:31:44  Compiling rpc.jaffle_shop.request
+2021-12-21 09:31:44.562364 (Thread-1): 09:31:44  finished collecting timing info
+2021-12-21 09:31:44.562490 (Thread-1): 09:31:44  Began executing node rpc.jaffle_shop.request
+2021-12-21 09:31:44.564044 (Thread-1): 09:31:44  Using snowflake connection "rpc.jaffle_shop.request"
+2021-12-21 09:31:44.564136 (Thread-1): 09:31:44  On rpc.jaffle_shop.request: with customers as (
+
+    select * from ANALYTICS.dbt_dsalvati.stg_customers
+
+),
+
+orders as (
+
+    select * from ANALYTICS.dbt_dsalvati.stg_orders
+
+),
+
+lifetime_value as (
+
+    select 
+        customers.*,
+        sum(stg_payments.amount) as lifetime_value
+    
+    from customers
+    left join orders
+    on customers.customer_id = orders.customer_id
+    left join ANALYTICS.dbt_dsalvati.stg_payments
+    on orders.stg_orders = stg_payments.orderid
+
+),
+
+customer_orders as (
+
+    select
+        customer_id,
+
+        min(order_date) as first_order_date,
+        max(order_date) as most_recent_order_date,
+        count(order_id) as number_of_orders
+
+    from orders
+
+    group by 1
+
+),
+
+final as (
+
+    select
+        customers.customer_id,
+        customers.first_name,
+        customers.last_name,
+        customers.lifetime_value,
+        customer_orders.first_order_date,
+        customer_orders.most_recent_order_date,
+        coalesce(customer_orders.number_of_orders, 0) as number_of_orders
+
+    from customers
+
+    left join customer_orders using (customer_id)
+
+)
+
+select * from final
+limit 500
+/* limit added automatically by dbt cloud */
+2021-12-21 09:31:44.564216 (Thread-1): 09:31:44  Opening a new connection, currently in state init
+2021-12-21 09:31:45.007329 (Thread-237): handling poll request
+2021-12-21 09:31:45.007795 (Thread-237): 09:31:45  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'd1c33850-30e3-411e-998d-badc6b04d1da', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f89e4362d30>]}
+2021-12-21 09:31:45.008662 (Thread-237): sending response (<Response 4854 bytes [200 OK]>) to 10.0.9.214
+2021-12-21 09:31:45.405532 (Thread-1): 09:31:45  Snowflake adapter: Snowflake query id: 01a117fb-0000-03e8-0000-000012292425
+2021-12-21 09:31:45.405742 (Thread-1): 09:31:45  Snowflake adapter: Snowflake error: 000904 (42000): SQL compilation error: error line 23 at position 7
+invalid identifier 'ORDERS.STG_ORDERS'
+2021-12-21 09:31:45.405897 (Thread-1): 09:31:45  finished collecting timing info
+2021-12-21 09:31:45.406079 (Thread-1): 09:31:45  On rpc.jaffle_shop.request: Close
+2021-12-21 09:31:45.578168 (Thread-1): Got an exception: Database Error
+  000904 (42000): SQL compilation error: error line 23 at position 7
+  invalid identifier 'ORDERS.STG_ORDERS'
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/snowflake/connections.py", line 204, in exception_handler
+    yield
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/sql/connections.py", line 74, in add_query
+    cursor.execute(sql, bindings)
+  File "/usr/local/lib/python3.8/dist-packages/snowflake/connector/cursor.py", line 790, in execute
+    Error.errorhandler_wrapper(
+  File "/usr/local/lib/python3.8/dist-packages/snowflake/connector/errors.py", line 272, in errorhandler_wrapper
+    handed_over = Error.hand_to_other_handler(
+  File "/usr/local/lib/python3.8/dist-packages/snowflake/connector/errors.py", line 327, in hand_to_other_handler
+    cursor.errorhandler(connection, cursor, error_class, error_value)
+  File "/usr/local/lib/python3.8/dist-packages/snowflake/connector/errors.py", line 206, in default_errorhandler
+    raise error_class(
+snowflake.connector.errors.ProgrammingError: 000904 (42000): SQL compilation error: error line 23 at position 7
+invalid identifier 'ORDERS.STG_ORDERS'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/dbt/task/base.py", line 361, in safe_run
+    result = self.compile_and_execute(manifest, ctx)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/task/base.py", line 314, in compile_and_execute
+    result = self.run(ctx.node, manifest)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/task/base.py", line 403, in run
+    return self.execute(compiled_node, manifest)
+  File "/usr/local/lib/python3.8/dist-packages/dbt_rpc/rpc/node_runners.py", line 90, in execute
+    _, execute_result = self.adapter.execute(
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/base/impl.py", line 225, in execute
+    return self.connections.execute(
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/sql/connections.py", line 127, in execute
+    _, cursor = self.add_query(sql, auto_begin)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/snowflake/connections.py", line 431, in add_query
+    connection, cursor = super().add_query(
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/sql/connections.py", line 83, in add_query
+    return connection, cursor
+  File "/usr/lib/python3.8/contextlib.py", line 131, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/snowflake/connections.py", line 221, in exception_handler
+    raise DatabaseException(msg)
+dbt.exceptions.DatabaseException: Database Error
+  000904 (42000): SQL compilation error: error line 23 at position 7
+  invalid identifier 'ORDERS.STG_ORDERS'
+2021-12-21 09:31:45.579069 (Thread-1): Got exception RPCException(10003, Database Error, {'type': 'DatabaseException', 'message': "Database Error in rpc request (from remote system)\n  000904 (42000): SQL compilation error: error line 23 at position 7\n  invalid identifier 'ORDERS.STG_ORDERS'", 'raw_sql': "with customers as (\n\n    select * from {{ ref('stg_customers')}}\n\n),\n\norders as (\n\n    select * from {{ ref('stg_orders') }}\n\n),\n\nlifetime_value as (\n\n    select \n        customers.*,\n        sum(stg_payments.amount) as lifetime_value\n    \n    from customers\n    left join orders\n    on customers.customer_id = orders.customer_id\n    left join {{ ref('stg_payments') }}\n    on orders.stg_orders = stg_payments.orderid\n\n),\n\ncustomer_orders as (\n\n    select\n        customer_id,\n\n        min(order_date) as first_order_date,\n        max(order_date) as most_recent_order_date,\n        count(order_id) as number_of_orders\n\n    from orders\n\n    group by 1\n\n),\n\nfinal as (\n\n    select\n        customers.customer_id,\n        customers.first_name,\n        customers.last_name,\n        customers.lifetime_value,\n        customer_orders.first_order_date,\n        customer_orders.most_recent_order_date,\n        coalesce(customer_orders.number_of_orders, 0) as number_of_orders\n\n    from customers\n\n    left join customer_orders using (customer_id)\n\n)\n\nselect * from final\nlimit 500\n/* limit added automatically by dbt cloud */", 'compiled_sql': 'with customers as (\n\n    select * from ANALYTICS.dbt_dsalvati.stg_customers\n\n),\n\norders as (\n\n    select * from ANALYTICS.dbt_dsalvati.stg_orders\n\n),\n\nlifetime_value as (\n\n    select \n        customers.*,\n        sum(stg_payments.amount) as lifetime_value\n    \n    from customers\n    left join orders\n    on customers.customer_id = orders.customer_id\n    left join ANALYTICS.dbt_dsalvati.stg_payments\n    on orders.stg_orders = stg_payments.orderid\n\n),\n\ncustomer_orders as (\n\n    select\n        customer_id,\n\n        min(order_date) as first_order_date,\n        max(order_date) as most_recent_order_date,\n        count(order_id) as number_of_orders\n\n    from orders\n\n    group by 1\n\n),\n\nfinal as (\n\n    select\n        customers.customer_id,\n        customers.first_name,\n        customers.last_name,\n        customers.lifetime_value,\n        customer_orders.first_order_date,\n        customer_orders.most_recent_order_date,\n        coalesce(customer_orders.number_of_orders, 0) as number_of_orders\n\n    from customers\n\n    left join customer_orders using (customer_id)\n\n)\n\nselect * from final\nlimit 500\n/* limit added automatically by dbt cloud */', 'tags': None}, None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/dbt_rpc/task/sql_commands.py", line 147, in _in_thread
+    self.node_results.append(runner.safe_run(self.manifest))
+  File "/usr/local/lib/python3.8/dist-packages/dbt/task/base.py", line 377, in safe_run
+    result = self.error_result(ctx.node, error, started, [])
+  File "/usr/local/lib/python3.8/dist-packages/dbt_rpc/rpc/node_runners.py", line 56, in error_result
+    raise error
+dbt_rpc.rpc.error.RPCException: RPCException(10003, Database Error, {'type': 'DatabaseException', 'message': "Database Error in rpc request (from remote system)\n  000904 (42000): SQL compilation error: error line 23 at position 7\n  invalid identifier 'ORDERS.STG_ORDERS'", 'raw_sql': "with customers as (\n\n    select * from {{ ref('stg_customers')}}\n\n),\n\norders as (\n\n    select * from {{ ref('stg_orders') }}\n\n),\n\nlifetime_value as (\n\n    select \n        customers.*,\n        sum(stg_payments.amount) as lifetime_value\n    \n    from customers\n    left join orders\n    on customers.customer_id = orders.customer_id\n    left join {{ ref('stg_payments') }}\n    on orders.stg_orders = stg_payments.orderid\n\n),\n\ncustomer_orders as (\n\n    select\n        customer_id,\n\n        min(order_date) as first_order_date,\n        max(order_date) as most_recent_order_date,\n        count(order_id) as number_of_orders\n\n    from orders\n\n    group by 1\n\n),\n\nfinal as (\n\n    select\n        customers.customer_id,\n        customers.first_name,\n        customers.last_name,\n        customers.lifetime_value,\n        customer_orders.first_order_date,\n        customer_orders.most_recent_order_date,\n        coalesce(customer_orders.number_of_orders, 0) as number_of_orders\n\n    from customers\n\n    left join customer_orders using (customer_id)\n\n)\n\nselect * from final\nlimit 500\n/* limit added automatically by dbt cloud */", 'compiled_sql': 'with customers as (\n\n    select * from ANALYTICS.dbt_dsalvati.stg_customers\n\n),\n\norders as (\n\n    select * from ANALYTICS.dbt_dsalvati.stg_orders\n\n),\n\nlifetime_value as (\n\n    select \n        customers.*,\n        sum(stg_payments.amount) as lifetime_value\n    \n    from customers\n    left join orders\n    on customers.customer_id = orders.customer_id\n    left join ANALYTICS.dbt_dsalvati.stg_payments\n    on orders.stg_orders = stg_payments.orderid\n\n),\n\ncustomer_orders as (\n\n    select\n        customer_id,\n\n        min(order_date) as first_order_date,\n        max(order_date) as most_recent_order_date,\n        count(order_id) as number_of_orders\n\n    from orders\n\n    group by 1\n\n),\n\nfinal as (\n\n    select\n        customers.customer_id,\n        customers.first_name,\n        customers.last_name,\n        customers.lifetime_value,\n        customer_orders.first_order_date,\n        customer_orders.most_recent_order_date,\n        coalesce(customer_orders.number_of_orders, 0) as number_of_orders\n\n    from customers\n\n    left join customer_orders using (customer_id)\n\n)\n\nselect * from final\nlimit 500\n/* limit added automatically by dbt cloud */', 'tags': None}, None)
+2021-12-21 09:31:46.576313 (Thread-238): handling poll request
+2021-12-21 09:31:46.576690 (Thread-238): 09:31:46  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'd1c33850-30e3-411e-998d-badc6b04d1da', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f89e4362b80>]}
+2021-12-21 09:31:46.577312 (Thread-238): sending response (<Response 18114 bytes [200 OK]>) to 10.0.9.214
+2021-12-21 09:31:58.568822 (Thread-239): 09:31:58  Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+2021-12-21 09:31:58.569211 (Thread-239): 09:31:58  Partial parsing: updated file: jaffle_shop://models/mart/dim_customers.sql
+2021-12-21 09:31:58.730432 (Thread-239): 09:31:58  1699: static parser successfully parsed mart/dim_customers.sql
+2021-12-21 09:31:58.791318 (Thread-239): 09:31:58  Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'd1c33850-30e3-411e-998d-badc6b04d1da', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f89e4787550>]}
+2021-12-21 09:31:59.211344 (Thread-240): handling status request
+2021-12-21 09:31:59.216744 (Thread-241): handling status request
+2021-12-21 09:31:59.296515 (Thread-240): 09:31:59  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'd1c33850-30e3-411e-998d-badc6b04d1da', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f89e4288af0>]}
+2021-12-21 09:31:59.297091 (Thread-240): sending response (<Response 1563 bytes [200 OK]>) to 10.0.15.44
+2021-12-21 09:31:59.297317 (Thread-241): 09:31:59  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'd1c33850-30e3-411e-998d-badc6b04d1da', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f89e43af3a0>]}
+2021-12-21 09:31:59.308834 (Thread-241): sending response (<Response 1563 bytes [200 OK]>) to 10.0.19.248
+2021-12-21 09:31:59.444464 (Thread-242): handling status request
+2021-12-21 09:31:59.444814 (Thread-242): 09:31:59  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'd1c33850-30e3-411e-998d-badc6b04d1da', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f89e4288af0>]}
+2021-12-21 09:31:59.445261 (Thread-242): sending response (<Response 1563 bytes [200 OK]>) to 10.0.2.31
+2021-12-21 09:31:59.777551 (Thread-243): handling run_sql request
+2021-12-21 09:31:59.777903 (Thread-243): 09:31:59  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'd1c33850-30e3-411e-998d-badc6b04d1da', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f89e43af3a0>]}
+2021-12-21 09:32:01.866093 (Thread-243): sending response (<Response 138 bytes [200 OK]>) to 10.0.12.12
+2021-12-21 09:32:01.891139 (MainThread): 09:32:01  Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'e841276c-293f-46b5-bc91-c718d4b12a2b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fdff4b80730>]}
+2021-12-21 09:32:01.891779 (MainThread): 09:32:01  Found 7 models, 4 tests, 0 snapshots, 0 analyses, 179 macros, 0 operations, 0 seed files, 0 sources, 0 exposures, 0 metrics
+2021-12-21 09:32:01.892443 (Thread-1): 09:32:01  Acquiring new snowflake connection "rpc.jaffle_shop.request"
+2021-12-21 09:32:01.892569 (Thread-1): 09:32:01  Began compiling node rpc.jaffle_shop.request
+2021-12-21 09:32:01.892686 (Thread-1): 09:32:01  Compiling rpc.jaffle_shop.request
+2021-12-21 09:32:01.895118 (Thread-1): 09:32:01  finished collecting timing info
+2021-12-21 09:32:01.895253 (Thread-1): 09:32:01  Began executing node rpc.jaffle_shop.request
+2021-12-21 09:32:01.896804 (Thread-1): 09:32:01  Using snowflake connection "rpc.jaffle_shop.request"
+2021-12-21 09:32:01.896908 (Thread-1): 09:32:01  On rpc.jaffle_shop.request: with customers as (
+
+    select * from ANALYTICS.dbt_dsalvati.stg_customers
+
+),
+
+orders as (
+
+    select * from ANALYTICS.dbt_dsalvati.stg_orders
+
+),
+
+lifetime_value as (
+
+    select 
+        customers.*,
+        sum(stg_payments.amount) as lifetime_value
+    
+    from customers
+    left join orders
+    on customers.customer_id = orders.customer_id
+    left join ANALYTICS.dbt_dsalvati.stg_payments
+    on orders.order_id = stg_payments.orderid
+
+),
+
+customer_orders as (
+
+    select
+        customer_id,
+
+        min(order_date) as first_order_date,
+        max(order_date) as most_recent_order_date,
+        count(order_id) as number_of_orders
+
+    from orders
+
+    group by 1
+
+),
+
+final as (
+
+    select
+        customers.customer_id,
+        customers.first_name,
+        customers.last_name,
+        customers.lifetime_value,
+        customer_orders.first_order_date,
+        customer_orders.most_recent_order_date,
+        coalesce(customer_orders.number_of_orders, 0) as number_of_orders
+
+    from customers
+
+    left join customer_orders using (customer_id)
+
+)
+
+select * from final
+limit 500
+/* limit added automatically by dbt cloud */
+2021-12-21 09:32:01.896991 (Thread-1): 09:32:01  Opening a new connection, currently in state init
+2021-12-21 09:32:02.251561 (Thread-244): handling poll request
+2021-12-21 09:32:02.252028 (Thread-244): 09:32:02  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'd1c33850-30e3-411e-998d-badc6b04d1da', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f89e436ac10>]}
+2021-12-21 09:32:02.252973 (Thread-244): sending response (<Response 4852 bytes [200 OK]>) to 10.0.2.31
+2021-12-21 09:32:02.680127 (Thread-1): 09:32:02  Snowflake adapter: Snowflake query id: 01a117fc-0000-03e8-0000-000012292429
+2021-12-21 09:32:02.680332 (Thread-1): 09:32:02  Snowflake adapter: Snowflake error: 000904 (42000): SQL compilation error: error line 48 at position 8
+invalid identifier 'CUSTOMERS.LIFETIME_VALUE'
+2021-12-21 09:32:02.680486 (Thread-1): 09:32:02  finished collecting timing info
+2021-12-21 09:32:02.680675 (Thread-1): 09:32:02  On rpc.jaffle_shop.request: Close
+2021-12-21 09:32:02.858345 (Thread-1): Got an exception: Database Error
+  000904 (42000): SQL compilation error: error line 48 at position 8
+  invalid identifier 'CUSTOMERS.LIFETIME_VALUE'
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/snowflake/connections.py", line 204, in exception_handler
+    yield
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/sql/connections.py", line 74, in add_query
+    cursor.execute(sql, bindings)
+  File "/usr/local/lib/python3.8/dist-packages/snowflake/connector/cursor.py", line 790, in execute
+    Error.errorhandler_wrapper(
+  File "/usr/local/lib/python3.8/dist-packages/snowflake/connector/errors.py", line 272, in errorhandler_wrapper
+    handed_over = Error.hand_to_other_handler(
+  File "/usr/local/lib/python3.8/dist-packages/snowflake/connector/errors.py", line 327, in hand_to_other_handler
+    cursor.errorhandler(connection, cursor, error_class, error_value)
+  File "/usr/local/lib/python3.8/dist-packages/snowflake/connector/errors.py", line 206, in default_errorhandler
+    raise error_class(
+snowflake.connector.errors.ProgrammingError: 000904 (42000): SQL compilation error: error line 48 at position 8
+invalid identifier 'CUSTOMERS.LIFETIME_VALUE'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/dbt/task/base.py", line 361, in safe_run
+    result = self.compile_and_execute(manifest, ctx)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/task/base.py", line 314, in compile_and_execute
+    result = self.run(ctx.node, manifest)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/task/base.py", line 403, in run
+    return self.execute(compiled_node, manifest)
+  File "/usr/local/lib/python3.8/dist-packages/dbt_rpc/rpc/node_runners.py", line 90, in execute
+    _, execute_result = self.adapter.execute(
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/base/impl.py", line 225, in execute
+    return self.connections.execute(
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/sql/connections.py", line 127, in execute
+    _, cursor = self.add_query(sql, auto_begin)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/snowflake/connections.py", line 431, in add_query
+    connection, cursor = super().add_query(
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/sql/connections.py", line 83, in add_query
+    return connection, cursor
+  File "/usr/lib/python3.8/contextlib.py", line 131, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/snowflake/connections.py", line 221, in exception_handler
+    raise DatabaseException(msg)
+dbt.exceptions.DatabaseException: Database Error
+  000904 (42000): SQL compilation error: error line 48 at position 8
+  invalid identifier 'CUSTOMERS.LIFETIME_VALUE'
+2021-12-21 09:32:02.859320 (Thread-1): Got exception RPCException(10003, Database Error, {'type': 'DatabaseException', 'message': "Database Error in rpc request (from remote system)\n  000904 (42000): SQL compilation error: error line 48 at position 8\n  invalid identifier 'CUSTOMERS.LIFETIME_VALUE'", 'raw_sql': "with customers as (\n\n    select * from {{ ref('stg_customers')}}\n\n),\n\norders as (\n\n    select * from {{ ref('stg_orders') }}\n\n),\n\nlifetime_value as (\n\n    select \n        customers.*,\n        sum(stg_payments.amount) as lifetime_value\n    \n    from customers\n    left join orders\n    on customers.customer_id = orders.customer_id\n    left join {{ ref('stg_payments') }}\n    on orders.order_id = stg_payments.orderid\n\n),\n\ncustomer_orders as (\n\n    select\n        customer_id,\n\n        min(order_date) as first_order_date,\n        max(order_date) as most_recent_order_date,\n        count(order_id) as number_of_orders\n\n    from orders\n\n    group by 1\n\n),\n\nfinal as (\n\n    select\n        customers.customer_id,\n        customers.first_name,\n        customers.last_name,\n        customers.lifetime_value,\n        customer_orders.first_order_date,\n        customer_orders.most_recent_order_date,\n        coalesce(customer_orders.number_of_orders, 0) as number_of_orders\n\n    from customers\n\n    left join customer_orders using (customer_id)\n\n)\n\nselect * from final\nlimit 500\n/* limit added automatically by dbt cloud */", 'compiled_sql': 'with customers as (\n\n    select * from ANALYTICS.dbt_dsalvati.stg_customers\n\n),\n\norders as (\n\n    select * from ANALYTICS.dbt_dsalvati.stg_orders\n\n),\n\nlifetime_value as (\n\n    select \n        customers.*,\n        sum(stg_payments.amount) as lifetime_value\n    \n    from customers\n    left join orders\n    on customers.customer_id = orders.customer_id\n    left join ANALYTICS.dbt_dsalvati.stg_payments\n    on orders.order_id = stg_payments.orderid\n\n),\n\ncustomer_orders as (\n\n    select\n        customer_id,\n\n        min(order_date) as first_order_date,\n        max(order_date) as most_recent_order_date,\n        count(order_id) as number_of_orders\n\n    from orders\n\n    group by 1\n\n),\n\nfinal as (\n\n    select\n        customers.customer_id,\n        customers.first_name,\n        customers.last_name,\n        customers.lifetime_value,\n        customer_orders.first_order_date,\n        customer_orders.most_recent_order_date,\n        coalesce(customer_orders.number_of_orders, 0) as number_of_orders\n\n    from customers\n\n    left join customer_orders using (customer_id)\n\n)\n\nselect * from final\nlimit 500\n/* limit added automatically by dbt cloud */', 'tags': None}, None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/dbt_rpc/task/sql_commands.py", line 147, in _in_thread
+    self.node_results.append(runner.safe_run(self.manifest))
+  File "/usr/local/lib/python3.8/dist-packages/dbt/task/base.py", line 377, in safe_run
+    result = self.error_result(ctx.node, error, started, [])
+  File "/usr/local/lib/python3.8/dist-packages/dbt_rpc/rpc/node_runners.py", line 56, in error_result
+    raise error
+dbt_rpc.rpc.error.RPCException: RPCException(10003, Database Error, {'type': 'DatabaseException', 'message': "Database Error in rpc request (from remote system)\n  000904 (42000): SQL compilation error: error line 48 at position 8\n  invalid identifier 'CUSTOMERS.LIFETIME_VALUE'", 'raw_sql': "with customers as (\n\n    select * from {{ ref('stg_customers')}}\n\n),\n\norders as (\n\n    select * from {{ ref('stg_orders') }}\n\n),\n\nlifetime_value as (\n\n    select \n        customers.*,\n        sum(stg_payments.amount) as lifetime_value\n    \n    from customers\n    left join orders\n    on customers.customer_id = orders.customer_id\n    left join {{ ref('stg_payments') }}\n    on orders.order_id = stg_payments.orderid\n\n),\n\ncustomer_orders as (\n\n    select\n        customer_id,\n\n        min(order_date) as first_order_date,\n        max(order_date) as most_recent_order_date,\n        count(order_id) as number_of_orders\n\n    from orders\n\n    group by 1\n\n),\n\nfinal as (\n\n    select\n        customers.customer_id,\n        customers.first_name,\n        customers.last_name,\n        customers.lifetime_value,\n        customer_orders.first_order_date,\n        customer_orders.most_recent_order_date,\n        coalesce(customer_orders.number_of_orders, 0) as number_of_orders\n\n    from customers\n\n    left join customer_orders using (customer_id)\n\n)\n\nselect * from final\nlimit 500\n/* limit added automatically by dbt cloud */", 'compiled_sql': 'with customers as (\n\n    select * from ANALYTICS.dbt_dsalvati.stg_customers\n\n),\n\norders as (\n\n    select * from ANALYTICS.dbt_dsalvati.stg_orders\n\n),\n\nlifetime_value as (\n\n    select \n        customers.*,\n        sum(stg_payments.amount) as lifetime_value\n    \n    from customers\n    left join orders\n    on customers.customer_id = orders.customer_id\n    left join ANALYTICS.dbt_dsalvati.stg_payments\n    on orders.order_id = stg_payments.orderid\n\n),\n\ncustomer_orders as (\n\n    select\n        customer_id,\n\n        min(order_date) as first_order_date,\n        max(order_date) as most_recent_order_date,\n        count(order_id) as number_of_orders\n\n    from orders\n\n    group by 1\n\n),\n\nfinal as (\n\n    select\n        customers.customer_id,\n        customers.first_name,\n        customers.last_name,\n        customers.lifetime_value,\n        customer_orders.first_order_date,\n        customer_orders.most_recent_order_date,\n        coalesce(customer_orders.number_of_orders, 0) as number_of_orders\n\n    from customers\n\n    left join customer_orders using (customer_id)\n\n)\n\nselect * from final\nlimit 500\n/* limit added automatically by dbt cloud */', 'tags': None}, None)
+2021-12-21 09:32:03.783519 (Thread-245): handling poll request
+2021-12-21 09:32:03.783952 (Thread-245): 09:32:03  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'd1c33850-30e3-411e-998d-badc6b04d1da', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f89e4787e80>]}
+2021-12-21 09:32:03.784657 (Thread-245): sending response (<Response 18149 bytes [200 OK]>) to 10.0.46.146
+2021-12-21 09:33:00.946640 (Thread-246): 09:33:00  Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+2021-12-21 09:33:00.947034 (Thread-246): 09:33:00  Partial parsing: updated file: jaffle_shop://models/mart/dim_customers.sql
+2021-12-21 09:33:00.951110 (Thread-246): 09:33:00  1699: static parser successfully parsed mart/dim_customers.sql
+2021-12-21 09:33:01.005561 (Thread-246): 09:33:01  Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'd1c33850-30e3-411e-998d-badc6b04d1da', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8a38303460>]}
+2021-12-21 09:33:01.624526 (Thread-247): handling status request
+2021-12-21 09:33:01.624956 (Thread-247): 09:33:01  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'd1c33850-30e3-411e-998d-badc6b04d1da', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8a3816b280>]}
+2021-12-21 09:33:01.625465 (Thread-247): sending response (<Response 1563 bytes [200 OK]>) to 10.0.41.245
+2021-12-21 09:33:01.675982 (Thread-248): handling status request
+2021-12-21 09:33:01.676301 (Thread-248): 09:33:01  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'd1c33850-30e3-411e-998d-badc6b04d1da', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8a3816b190>]}
+2021-12-21 09:33:01.676761 (Thread-248): sending response (<Response 1563 bytes [200 OK]>) to 10.0.30.119
+2021-12-21 09:33:02.312026 (Thread-249): handling status request
+2021-12-21 09:33:02.312444 (Thread-249): 09:33:02  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'd1c33850-30e3-411e-998d-badc6b04d1da', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8a380ee610>]}
+2021-12-21 09:33:02.312934 (Thread-249): sending response (<Response 1563 bytes [200 OK]>) to 10.0.20.185
+2021-12-21 09:33:02.629490 (Thread-250): handling run_sql request
+2021-12-21 09:33:02.629853 (Thread-250): 09:33:02  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'd1c33850-30e3-411e-998d-badc6b04d1da', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8a380eeb80>]}
+2021-12-21 09:33:04.725611 (Thread-250): sending response (<Response 138 bytes [200 OK]>) to 10.0.30.119
+2021-12-21 09:33:04.749702 (MainThread): 09:33:04  Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'af7bc116-0167-40be-be0a-9b739b0fc357', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f61ed7726d0>]}
+2021-12-21 09:33:04.750281 (MainThread): 09:33:04  Found 7 models, 4 tests, 0 snapshots, 0 analyses, 179 macros, 0 operations, 0 seed files, 0 sources, 0 exposures, 0 metrics
+2021-12-21 09:33:04.750846 (Thread-1): 09:33:04  Acquiring new snowflake connection "rpc.jaffle_shop.request"
+2021-12-21 09:33:04.750978 (Thread-1): 09:33:04  Began compiling node rpc.jaffle_shop.request
+2021-12-21 09:33:04.751069 (Thread-1): 09:33:04  Compiling rpc.jaffle_shop.request
+2021-12-21 09:33:04.753598 (Thread-1): 09:33:04  finished collecting timing info
+2021-12-21 09:33:04.753723 (Thread-1): 09:33:04  Began executing node rpc.jaffle_shop.request
+2021-12-21 09:33:04.755211 (Thread-1): 09:33:04  Using snowflake connection "rpc.jaffle_shop.request"
+2021-12-21 09:33:04.755299 (Thread-1): 09:33:04  On rpc.jaffle_shop.request: with customers as (
+
+    select * from ANALYTICS.dbt_dsalvati.stg_customers
+
+),
+
+orders as (
+
+    select * from ANALYTICS.dbt_dsalvati.stg_orders
+
+),
+
+lifetime_value as (
+
+    select 
+        customers.*,
+        sum(stg_payments.amount) as lifetime_value
+    
+    from customers
+    left join orders
+    on customers.customer_id = orders.customer_id
+    left join ANALYTICS.dbt_dsalvati.stg_payments
+    on orders.order_id = stg_payments.orderid
+
+),
+
+customer_orders as (
+
+    select
+        customer_id,
+
+        min(order_date) as first_order_date,
+        max(order_date) as most_recent_order_date,
+        count(order_id) as number_of_orders
+
+    from orders
+
+    group by 1
+
+),
+
+final as (
+
+    select
+        lifetime_value.customer_id,
+        lifetime_value.first_name,
+        lifetime_value.last_name,
+        lifetime_value.lifetime_value,
+        customer_orders.first_order_date,
+        customer_orders.most_recent_order_date,
+        coalesce(customer_orders.number_of_orders, 0) as number_of_orders
+
+    from lifetime_value
+
+    left join customer_orders using (customer_id)
+
+)
+
+select * from final
+limit 500
+/* limit added automatically by dbt cloud */
+2021-12-21 09:33:04.755378 (Thread-1): 09:33:04  Opening a new connection, currently in state init
+2021-12-21 09:33:05.187495 (Thread-251): handling poll request
+2021-12-21 09:33:05.187947 (Thread-251): 09:33:05  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'd1c33850-30e3-411e-998d-badc6b04d1da', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8a380a1640>]}
+2021-12-21 09:33:05.188839 (Thread-251): sending response (<Response 4877 bytes [200 OK]>) to 10.0.30.119
+2021-12-21 09:33:05.604547 (Thread-1): 09:33:05  Snowflake adapter: Snowflake query id: 01a117fd-0000-03e8-0000-00001229242d
+2021-12-21 09:33:05.604777 (Thread-1): 09:33:05  Snowflake adapter: Snowflake error: 000979 (42601): SQL compilation error:
+[CUSTOMERS.CUSTOMER_ID] is not a valid group by expression
+2021-12-21 09:33:05.604955 (Thread-1): 09:33:05  finished collecting timing info
+2021-12-21 09:33:05.605154 (Thread-1): 09:33:05  On rpc.jaffle_shop.request: Close
+2021-12-21 09:33:05.775928 (Thread-1): Got an exception: Database Error
+  000979 (42601): SQL compilation error:
+  [CUSTOMERS.CUSTOMER_ID] is not a valid group by expression
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/snowflake/connections.py", line 204, in exception_handler
+    yield
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/sql/connections.py", line 74, in add_query
+    cursor.execute(sql, bindings)
+  File "/usr/local/lib/python3.8/dist-packages/snowflake/connector/cursor.py", line 790, in execute
+    Error.errorhandler_wrapper(
+  File "/usr/local/lib/python3.8/dist-packages/snowflake/connector/errors.py", line 272, in errorhandler_wrapper
+    handed_over = Error.hand_to_other_handler(
+  File "/usr/local/lib/python3.8/dist-packages/snowflake/connector/errors.py", line 327, in hand_to_other_handler
+    cursor.errorhandler(connection, cursor, error_class, error_value)
+  File "/usr/local/lib/python3.8/dist-packages/snowflake/connector/errors.py", line 206, in default_errorhandler
+    raise error_class(
+snowflake.connector.errors.ProgrammingError: 000979 (42601): SQL compilation error:
+[CUSTOMERS.CUSTOMER_ID] is not a valid group by expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/dbt/task/base.py", line 361, in safe_run
+    result = self.compile_and_execute(manifest, ctx)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/task/base.py", line 314, in compile_and_execute
+    result = self.run(ctx.node, manifest)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/task/base.py", line 403, in run
+    return self.execute(compiled_node, manifest)
+  File "/usr/local/lib/python3.8/dist-packages/dbt_rpc/rpc/node_runners.py", line 90, in execute
+    _, execute_result = self.adapter.execute(
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/base/impl.py", line 225, in execute
+    return self.connections.execute(
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/sql/connections.py", line 127, in execute
+    _, cursor = self.add_query(sql, auto_begin)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/snowflake/connections.py", line 431, in add_query
+    connection, cursor = super().add_query(
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/sql/connections.py", line 83, in add_query
+    return connection, cursor
+  File "/usr/lib/python3.8/contextlib.py", line 131, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/snowflake/connections.py", line 221, in exception_handler
+    raise DatabaseException(msg)
+dbt.exceptions.DatabaseException: Database Error
+  000979 (42601): SQL compilation error:
+  [CUSTOMERS.CUSTOMER_ID] is not a valid group by expression
+2021-12-21 09:33:05.776970 (Thread-1): Got exception RPCException(10003, Database Error, {'type': 'DatabaseException', 'message': 'Database Error in rpc request (from remote system)\n  000979 (42601): SQL compilation error:\n  [CUSTOMERS.CUSTOMER_ID] is not a valid group by expression', 'raw_sql': "with customers as (\n\n    select * from {{ ref('stg_customers')}}\n\n),\n\norders as (\n\n    select * from {{ ref('stg_orders') }}\n\n),\n\nlifetime_value as (\n\n    select \n        customers.*,\n        sum(stg_payments.amount) as lifetime_value\n    \n    from customers\n    left join orders\n    on customers.customer_id = orders.customer_id\n    left join {{ ref('stg_payments') }}\n    on orders.order_id = stg_payments.orderid\n\n),\n\ncustomer_orders as (\n\n    select\n        customer_id,\n\n        min(order_date) as first_order_date,\n        max(order_date) as most_recent_order_date,\n        count(order_id) as number_of_orders\n\n    from orders\n\n    group by 1\n\n),\n\nfinal as (\n\n    select\n        lifetime_value.customer_id,\n        lifetime_value.first_name,\n        lifetime_value.last_name,\n        lifetime_value.lifetime_value,\n        customer_orders.first_order_date,\n        customer_orders.most_recent_order_date,\n        coalesce(customer_orders.number_of_orders, 0) as number_of_orders\n\n    from lifetime_value\n\n    left join customer_orders using (customer_id)\n\n)\n\nselect * from final\nlimit 500\n/* limit added automatically by dbt cloud */", 'compiled_sql': 'with customers as (\n\n    select * from ANALYTICS.dbt_dsalvati.stg_customers\n\n),\n\norders as (\n\n    select * from ANALYTICS.dbt_dsalvati.stg_orders\n\n),\n\nlifetime_value as (\n\n    select \n        customers.*,\n        sum(stg_payments.amount) as lifetime_value\n    \n    from customers\n    left join orders\n    on customers.customer_id = orders.customer_id\n    left join ANALYTICS.dbt_dsalvati.stg_payments\n    on orders.order_id = stg_payments.orderid\n\n),\n\ncustomer_orders as (\n\n    select\n        customer_id,\n\n        min(order_date) as first_order_date,\n        max(order_date) as most_recent_order_date,\n        count(order_id) as number_of_orders\n\n    from orders\n\n    group by 1\n\n),\n\nfinal as (\n\n    select\n        lifetime_value.customer_id,\n        lifetime_value.first_name,\n        lifetime_value.last_name,\n        lifetime_value.lifetime_value,\n        customer_orders.first_order_date,\n        customer_orders.most_recent_order_date,\n        coalesce(customer_orders.number_of_orders, 0) as number_of_orders\n\n    from lifetime_value\n\n    left join customer_orders using (customer_id)\n\n)\n\nselect * from final\nlimit 500\n/* limit added automatically by dbt cloud */', 'tags': None}, None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/dbt_rpc/task/sql_commands.py", line 147, in _in_thread
+    self.node_results.append(runner.safe_run(self.manifest))
+  File "/usr/local/lib/python3.8/dist-packages/dbt/task/base.py", line 377, in safe_run
+    result = self.error_result(ctx.node, error, started, [])
+  File "/usr/local/lib/python3.8/dist-packages/dbt_rpc/rpc/node_runners.py", line 56, in error_result
+    raise error
+dbt_rpc.rpc.error.RPCException: RPCException(10003, Database Error, {'type': 'DatabaseException', 'message': 'Database Error in rpc request (from remote system)\n  000979 (42601): SQL compilation error:\n  [CUSTOMERS.CUSTOMER_ID] is not a valid group by expression', 'raw_sql': "with customers as (\n\n    select * from {{ ref('stg_customers')}}\n\n),\n\norders as (\n\n    select * from {{ ref('stg_orders') }}\n\n),\n\nlifetime_value as (\n\n    select \n        customers.*,\n        sum(stg_payments.amount) as lifetime_value\n    \n    from customers\n    left join orders\n    on customers.customer_id = orders.customer_id\n    left join {{ ref('stg_payments') }}\n    on orders.order_id = stg_payments.orderid\n\n),\n\ncustomer_orders as (\n\n    select\n        customer_id,\n\n        min(order_date) as first_order_date,\n        max(order_date) as most_recent_order_date,\n        count(order_id) as number_of_orders\n\n    from orders\n\n    group by 1\n\n),\n\nfinal as (\n\n    select\n        lifetime_value.customer_id,\n        lifetime_value.first_name,\n        lifetime_value.last_name,\n        lifetime_value.lifetime_value,\n        customer_orders.first_order_date,\n        customer_orders.most_recent_order_date,\n        coalesce(customer_orders.number_of_orders, 0) as number_of_orders\n\n    from lifetime_value\n\n    left join customer_orders using (customer_id)\n\n)\n\nselect * from final\nlimit 500\n/* limit added automatically by dbt cloud */", 'compiled_sql': 'with customers as (\n\n    select * from ANALYTICS.dbt_dsalvati.stg_customers\n\n),\n\norders as (\n\n    select * from ANALYTICS.dbt_dsalvati.stg_orders\n\n),\n\nlifetime_value as (\n\n    select \n        customers.*,\n        sum(stg_payments.amount) as lifetime_value\n    \n    from customers\n    left join orders\n    on customers.customer_id = orders.customer_id\n    left join ANALYTICS.dbt_dsalvati.stg_payments\n    on orders.order_id = stg_payments.orderid\n\n),\n\ncustomer_orders as (\n\n    select\n        customer_id,\n\n        min(order_date) as first_order_date,\n        max(order_date) as most_recent_order_date,\n        count(order_id) as number_of_orders\n\n    from orders\n\n    group by 1\n\n),\n\nfinal as (\n\n    select\n        lifetime_value.customer_id,\n        lifetime_value.first_name,\n        lifetime_value.last_name,\n        lifetime_value.lifetime_value,\n        customer_orders.first_order_date,\n        customer_orders.most_recent_order_date,\n        coalesce(customer_orders.number_of_orders, 0) as number_of_orders\n\n    from lifetime_value\n\n    left join customer_orders using (customer_id)\n\n)\n\nselect * from final\nlimit 500\n/* limit added automatically by dbt cloud */', 'tags': None}, None)
+2021-12-21 09:33:06.708244 (Thread-252): handling poll request
+2021-12-21 09:33:06.708606 (Thread-252): 09:33:06  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'd1c33850-30e3-411e-998d-badc6b04d1da', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8a380a1bb0>]}
+2021-12-21 09:33:06.709246 (Thread-252): sending response (<Response 18215 bytes [200 OK]>) to 10.0.34.193
+2021-12-21 09:33:19.098664 (Thread-253): 09:33:19  Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+2021-12-21 09:33:19.099056 (Thread-253): 09:33:19  Partial parsing: updated file: jaffle_shop://models/mart/dim_customers.sql
+2021-12-21 09:33:19.103252 (Thread-253): 09:33:19  1699: static parser successfully parsed mart/dim_customers.sql
+2021-12-21 09:33:19.149072 (Thread-253): 09:33:19  Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'd1c33850-30e3-411e-998d-badc6b04d1da', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8a387d3370>]}
+2021-12-21 09:33:19.956935 (Thread-254): handling status request
+2021-12-21 09:33:19.957305 (Thread-254): 09:33:19  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'd1c33850-30e3-411e-998d-badc6b04d1da', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8a382e9a90>]}
+2021-12-21 09:33:19.957800 (Thread-254): sending response (<Response 1563 bytes [200 OK]>) to 10.0.41.245
+2021-12-21 09:33:20.038791 (Thread-255): handling status request
+2021-12-21 09:33:20.039096 (Thread-255): 09:33:20  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'd1c33850-30e3-411e-998d-badc6b04d1da', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8a382e9b20>]}
+2021-12-21 09:33:20.039538 (Thread-255): sending response (<Response 1563 bytes [200 OK]>) to 10.0.46.16
+2021-12-21 09:33:20.437218 (Thread-256): handling status request
+2021-12-21 09:33:20.437564 (Thread-256): 09:33:20  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'd1c33850-30e3-411e-998d-badc6b04d1da', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8a382e93a0>]}
+2021-12-21 09:33:20.438007 (Thread-256): sending response (<Response 1563 bytes [200 OK]>) to 10.0.30.119
+2021-12-21 09:33:20.766156 (Thread-257): handling run_sql request
+2021-12-21 09:33:20.766512 (Thread-257): 09:33:20  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'd1c33850-30e3-411e-998d-badc6b04d1da', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8a382e9910>]}
+2021-12-21 09:33:22.867112 (Thread-257): sending response (<Response 138 bytes [200 OK]>) to 10.0.18.133
+2021-12-21 09:33:22.891614 (MainThread): 09:33:22  Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '74fa1934-8789-4ef5-9094-a004085fef16', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbcf3ef5fd0>]}
+2021-12-21 09:33:22.892295 (MainThread): 09:33:22  Found 7 models, 4 tests, 0 snapshots, 0 analyses, 179 macros, 0 operations, 0 seed files, 0 sources, 0 exposures, 0 metrics
+2021-12-21 09:33:22.892878 (Thread-1): 09:33:22  Acquiring new snowflake connection "rpc.jaffle_shop.request"
+2021-12-21 09:33:22.893009 (Thread-1): 09:33:22  Began compiling node rpc.jaffle_shop.request
+2021-12-21 09:33:22.893101 (Thread-1): 09:33:22  Compiling rpc.jaffle_shop.request
+2021-12-21 09:33:22.895532 (Thread-1): 09:33:22  finished collecting timing info
+2021-12-21 09:33:22.895655 (Thread-1): 09:33:22  Began executing node rpc.jaffle_shop.request
+2021-12-21 09:33:22.897180 (Thread-1): 09:33:22  Using snowflake connection "rpc.jaffle_shop.request"
+2021-12-21 09:33:22.897267 (Thread-1): 09:33:22  On rpc.jaffle_shop.request: with customers as (
+
+    select * from ANALYTICS.dbt_dsalvati.stg_customers
+
+),
+
+orders as (
+
+    select * from ANALYTICS.dbt_dsalvati.stg_orders
+
+),
+
+lifetime_value as (
+
+    select 
+        customers.*,
+        sum(stg_payments.amount) as lifetime_value
+    
+    from customers
+    left join orders
+    on customers.customer_id = orders.customer_id
+    left join ANALYTICS.dbt_dsalvati.stg_payments
+    on orders.order_id = stg_payments.orderid
+
+    group by 1
+
+),
+
+customer_orders as (
+
+    select
+        customer_id,
+
+        min(order_date) as first_order_date,
+        max(order_date) as most_recent_order_date,
+        count(order_id) as number_of_orders
+
+    from orders
+
+    group by 1
+
+),
+
+final as (
+
+    select
+        lifetime_value.customer_id,
+        lifetime_value.first_name,
+        lifetime_value.last_name,
+        lifetime_value.lifetime_value,
+        customer_orders.first_order_date,
+        customer_orders.most_recent_order_date,
+        coalesce(customer_orders.number_of_orders, 0) as number_of_orders
+
+    from lifetime_value
+
+    left join customer_orders using (customer_id)
+
+)
+
+select * from final
+limit 500
+/* limit added automatically by dbt cloud */
+2021-12-21 09:33:22.897345 (Thread-1): 09:33:22  Opening a new connection, currently in state init
+2021-12-21 09:33:23.400385 (Thread-258): handling poll request
+2021-12-21 09:33:23.400874 (Thread-258): 09:33:23  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'd1c33850-30e3-411e-998d-badc6b04d1da', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8a382dcbe0>]}
+2021-12-21 09:33:23.401763 (Thread-258): sending response (<Response 4895 bytes [200 OK]>) to 10.0.19.248
+2021-12-21 09:33:23.710913 (Thread-1): 09:33:23  Snowflake adapter: Snowflake query id: 01a117fd-0000-03e4-0000-000012291425
+2021-12-21 09:33:23.711120 (Thread-1): 09:33:23  Snowflake adapter: Snowflake error: 001104 (42601): SQL compilation error: error line 0 at position -1
+'CUSTOMERS.FIRST_NAME' in select clause is neither an aggregate nor in the group by clause.
+2021-12-21 09:33:23.711280 (Thread-1): 09:33:23  finished collecting timing info
+2021-12-21 09:33:23.711459 (Thread-1): 09:33:23  On rpc.jaffle_shop.request: Close
+2021-12-21 09:33:23.891793 (Thread-1): Got an exception: Database Error
+  001104 (42601): SQL compilation error: error line 0 at position -1
+  'CUSTOMERS.FIRST_NAME' in select clause is neither an aggregate nor in the group by clause.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/snowflake/connections.py", line 204, in exception_handler
+    yield
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/sql/connections.py", line 74, in add_query
+    cursor.execute(sql, bindings)
+  File "/usr/local/lib/python3.8/dist-packages/snowflake/connector/cursor.py", line 790, in execute
+    Error.errorhandler_wrapper(
+  File "/usr/local/lib/python3.8/dist-packages/snowflake/connector/errors.py", line 272, in errorhandler_wrapper
+    handed_over = Error.hand_to_other_handler(
+  File "/usr/local/lib/python3.8/dist-packages/snowflake/connector/errors.py", line 327, in hand_to_other_handler
+    cursor.errorhandler(connection, cursor, error_class, error_value)
+  File "/usr/local/lib/python3.8/dist-packages/snowflake/connector/errors.py", line 206, in default_errorhandler
+    raise error_class(
+snowflake.connector.errors.ProgrammingError: 001104 (42601): SQL compilation error: error line 0 at position -1
+'CUSTOMERS.FIRST_NAME' in select clause is neither an aggregate nor in the group by clause.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/dbt/task/base.py", line 361, in safe_run
+    result = self.compile_and_execute(manifest, ctx)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/task/base.py", line 314, in compile_and_execute
+    result = self.run(ctx.node, manifest)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/task/base.py", line 403, in run
+    return self.execute(compiled_node, manifest)
+  File "/usr/local/lib/python3.8/dist-packages/dbt_rpc/rpc/node_runners.py", line 90, in execute
+    _, execute_result = self.adapter.execute(
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/base/impl.py", line 225, in execute
+    return self.connections.execute(
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/sql/connections.py", line 127, in execute
+    _, cursor = self.add_query(sql, auto_begin)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/snowflake/connections.py", line 431, in add_query
+    connection, cursor = super().add_query(
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/sql/connections.py", line 83, in add_query
+    return connection, cursor
+  File "/usr/lib/python3.8/contextlib.py", line 131, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/snowflake/connections.py", line 221, in exception_handler
+    raise DatabaseException(msg)
+dbt.exceptions.DatabaseException: Database Error
+  001104 (42601): SQL compilation error: error line 0 at position -1
+  'CUSTOMERS.FIRST_NAME' in select clause is neither an aggregate nor in the group by clause.
+2021-12-21 09:33:23.892810 (Thread-1): Got exception RPCException(10003, Database Error, {'type': 'DatabaseException', 'message': "Database Error in rpc request (from remote system)\n  001104 (42601): SQL compilation error: error line 0 at position -1\n  'CUSTOMERS.FIRST_NAME' in select clause is neither an aggregate nor in the group by clause.", 'raw_sql': "with customers as (\n\n    select * from {{ ref('stg_customers')}}\n\n),\n\norders as (\n\n    select * from {{ ref('stg_orders') }}\n\n),\n\nlifetime_value as (\n\n    select \n        customers.*,\n        sum(stg_payments.amount) as lifetime_value\n    \n    from customers\n    left join orders\n    on customers.customer_id = orders.customer_id\n    left join {{ ref('stg_payments') }}\n    on orders.order_id = stg_payments.orderid\n\n    group by 1\n\n),\n\ncustomer_orders as (\n\n    select\n        customer_id,\n\n        min(order_date) as first_order_date,\n        max(order_date) as most_recent_order_date,\n        count(order_id) as number_of_orders\n\n    from orders\n\n    group by 1\n\n),\n\nfinal as (\n\n    select\n        lifetime_value.customer_id,\n        lifetime_value.first_name,\n        lifetime_value.last_name,\n        lifetime_value.lifetime_value,\n        customer_orders.first_order_date,\n        customer_orders.most_recent_order_date,\n        coalesce(customer_orders.number_of_orders, 0) as number_of_orders\n\n    from lifetime_value\n\n    left join customer_orders using (customer_id)\n\n)\n\nselect * from final\nlimit 500\n/* limit added automatically by dbt cloud */", 'compiled_sql': 'with customers as (\n\n    select * from ANALYTICS.dbt_dsalvati.stg_customers\n\n),\n\norders as (\n\n    select * from ANALYTICS.dbt_dsalvati.stg_orders\n\n),\n\nlifetime_value as (\n\n    select \n        customers.*,\n        sum(stg_payments.amount) as lifetime_value\n    \n    from customers\n    left join orders\n    on customers.customer_id = orders.customer_id\n    left join ANALYTICS.dbt_dsalvati.stg_payments\n    on orders.order_id = stg_payments.orderid\n\n    group by 1\n\n),\n\ncustomer_orders as (\n\n    select\n        customer_id,\n\n        min(order_date) as first_order_date,\n        max(order_date) as most_recent_order_date,\n        count(order_id) as number_of_orders\n\n    from orders\n\n    group by 1\n\n),\n\nfinal as (\n\n    select\n        lifetime_value.customer_id,\n        lifetime_value.first_name,\n        lifetime_value.last_name,\n        lifetime_value.lifetime_value,\n        customer_orders.first_order_date,\n        customer_orders.most_recent_order_date,\n        coalesce(customer_orders.number_of_orders, 0) as number_of_orders\n\n    from lifetime_value\n\n    left join customer_orders using (customer_id)\n\n)\n\nselect * from final\nlimit 500\n/* limit added automatically by dbt cloud */', 'tags': None}, None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/dbt_rpc/task/sql_commands.py", line 147, in _in_thread
+    self.node_results.append(runner.safe_run(self.manifest))
+  File "/usr/local/lib/python3.8/dist-packages/dbt/task/base.py", line 377, in safe_run
+    result = self.error_result(ctx.node, error, started, [])
+  File "/usr/local/lib/python3.8/dist-packages/dbt_rpc/rpc/node_runners.py", line 56, in error_result
+    raise error
+dbt_rpc.rpc.error.RPCException: RPCException(10003, Database Error, {'type': 'DatabaseException', 'message': "Database Error in rpc request (from remote system)\n  001104 (42601): SQL compilation error: error line 0 at position -1\n  'CUSTOMERS.FIRST_NAME' in select clause is neither an aggregate nor in the group by clause.", 'raw_sql': "with customers as (\n\n    select * from {{ ref('stg_customers')}}\n\n),\n\norders as (\n\n    select * from {{ ref('stg_orders') }}\n\n),\n\nlifetime_value as (\n\n    select \n        customers.*,\n        sum(stg_payments.amount) as lifetime_value\n    \n    from customers\n    left join orders\n    on customers.customer_id = orders.customer_id\n    left join {{ ref('stg_payments') }}\n    on orders.order_id = stg_payments.orderid\n\n    group by 1\n\n),\n\ncustomer_orders as (\n\n    select\n        customer_id,\n\n        min(order_date) as first_order_date,\n        max(order_date) as most_recent_order_date,\n        count(order_id) as number_of_orders\n\n    from orders\n\n    group by 1\n\n),\n\nfinal as (\n\n    select\n        lifetime_value.customer_id,\n        lifetime_value.first_name,\n        lifetime_value.last_name,\n        lifetime_value.lifetime_value,\n        customer_orders.first_order_date,\n        customer_orders.most_recent_order_date,\n        coalesce(customer_orders.number_of_orders, 0) as number_of_orders\n\n    from lifetime_value\n\n    left join customer_orders using (customer_id)\n\n)\n\nselect * from final\nlimit 500\n/* limit added automatically by dbt cloud */", 'compiled_sql': 'with customers as (\n\n    select * from ANALYTICS.dbt_dsalvati.stg_customers\n\n),\n\norders as (\n\n    select * from ANALYTICS.dbt_dsalvati.stg_orders\n\n),\n\nlifetime_value as (\n\n    select \n        customers.*,\n        sum(stg_payments.amount) as lifetime_value\n    \n    from customers\n    left join orders\n    on customers.customer_id = orders.customer_id\n    left join ANALYTICS.dbt_dsalvati.stg_payments\n    on orders.order_id = stg_payments.orderid\n\n    group by 1\n\n),\n\ncustomer_orders as (\n\n    select\n        customer_id,\n\n        min(order_date) as first_order_date,\n        max(order_date) as most_recent_order_date,\n        count(order_id) as number_of_orders\n\n    from orders\n\n    group by 1\n\n),\n\nfinal as (\n\n    select\n        lifetime_value.customer_id,\n        lifetime_value.first_name,\n        lifetime_value.last_name,\n        lifetime_value.lifetime_value,\n        customer_orders.first_order_date,\n        customer_orders.most_recent_order_date,\n        coalesce(customer_orders.number_of_orders, 0) as number_of_orders\n\n    from lifetime_value\n\n    left join customer_orders using (customer_id)\n\n)\n\nselect * from final\nlimit 500\n/* limit added automatically by dbt cloud */', 'tags': None}, None)
+2021-12-21 09:33:24.843404 (Thread-259): handling poll request
+2021-12-21 09:33:24.843786 (Thread-259): 09:33:24  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'd1c33850-30e3-411e-998d-badc6b04d1da', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8a38303370>]}
+2021-12-21 09:33:24.844451 (Thread-259): sending response (<Response 18780 bytes [200 OK]>) to 10.0.20.134
+2021-12-21 09:33:36.850518 (Thread-260): 09:33:36  Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+2021-12-21 09:33:36.850909 (Thread-260): 09:33:36  Partial parsing: updated file: jaffle_shop://models/mart/dim_customers.sql
+2021-12-21 09:33:36.855161 (Thread-260): 09:33:36  1699: static parser successfully parsed mart/dim_customers.sql
+2021-12-21 09:33:36.898649 (Thread-260): 09:33:36  Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'd1c33850-30e3-411e-998d-badc6b04d1da', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8a383bab50>]}
+2021-12-21 09:33:37.511426 (Thread-261): handling status request
+2021-12-21 09:33:37.511862 (Thread-261): 09:33:37  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'd1c33850-30e3-411e-998d-badc6b04d1da', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8a38336220>]}
+2021-12-21 09:33:37.512403 (Thread-261): sending response (<Response 1563 bytes [200 OK]>) to 10.0.40.37
+2021-12-21 09:33:37.573337 (Thread-262): handling status request
+2021-12-21 09:33:37.573639 (Thread-262): 09:33:37  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'd1c33850-30e3-411e-998d-badc6b04d1da', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8a38336a60>]}
+2021-12-21 09:33:37.574071 (Thread-262): sending response (<Response 1563 bytes [200 OK]>) to 10.0.20.185
+2021-12-21 09:33:37.764183 (Thread-263): handling status request
+2021-12-21 09:33:37.764549 (Thread-263): 09:33:37  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'd1c33850-30e3-411e-998d-badc6b04d1da', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8a383364f0>]}
+2021-12-21 09:33:37.764996 (Thread-263): sending response (<Response 1563 bytes [200 OK]>) to 10.0.46.16
+2021-12-21 09:33:38.088473 (Thread-264): handling run_sql request
+2021-12-21 09:33:38.088839 (Thread-264): 09:33:38  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'd1c33850-30e3-411e-998d-badc6b04d1da', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8a38336ee0>]}
+2021-12-21 09:33:40.164710 (Thread-264): sending response (<Response 138 bytes [200 OK]>) to 10.0.28.81
+2021-12-21 09:33:40.188982 (MainThread): 09:33:40  Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'f3ad9b61-6f56-4faf-907d-ee85c062e32a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8db5247e20>]}
+2021-12-21 09:33:40.189565 (MainThread): 09:33:40  Found 7 models, 4 tests, 0 snapshots, 0 analyses, 179 macros, 0 operations, 0 seed files, 0 sources, 0 exposures, 0 metrics
+2021-12-21 09:33:40.190143 (Thread-1): 09:33:40  Acquiring new snowflake connection "rpc.jaffle_shop.request"
+2021-12-21 09:33:40.190266 (Thread-1): 09:33:40  Began compiling node rpc.jaffle_shop.request
+2021-12-21 09:33:40.190360 (Thread-1): 09:33:40  Compiling rpc.jaffle_shop.request
+2021-12-21 09:33:40.192822 (Thread-1): 09:33:40  finished collecting timing info
+2021-12-21 09:33:40.192945 (Thread-1): 09:33:40  Began executing node rpc.jaffle_shop.request
+2021-12-21 09:33:40.194443 (Thread-1): 09:33:40  Using snowflake connection "rpc.jaffle_shop.request"
+2021-12-21 09:33:40.194528 (Thread-1): 09:33:40  On rpc.jaffle_shop.request: with customers as (
+
+    select * from ANALYTICS.dbt_dsalvati.stg_customers
+
+),
+
+orders as (
+
+    select * from ANALYTICS.dbt_dsalvati.stg_orders
+
+),
+
+lifetime_value as (
+
+    select 
+        customers.*,
+        sum(stg_payments.amount) as lifetime_value
+    
+    from customers
+    left join orders
+    on customers.customer_id = orders.customer_id
+    left join ANALYTICS.dbt_dsalvati.stg_payments
+    on orders.order_id = stg_payments.orderid
+
+    group by 1, 2, 3
+
+),
+
+customer_orders as (
+
+    select
+        customer_id,
+
+        min(order_date) as first_order_date,
+        max(order_date) as most_recent_order_date,
+        count(order_id) as number_of_orders
+
+    from orders
+
+    group by 1
+
+),
+
+final as (
+
+    select
+        lifetime_value.customer_id,
+        lifetime_value.first_name,
+        lifetime_value.last_name,
+        lifetime_value.lifetime_value,
+        customer_orders.first_order_date,
+        customer_orders.most_recent_order_date,
+        coalesce(customer_orders.number_of_orders, 0) as number_of_orders
+
+    from lifetime_value
+
+    left join customer_orders using (customer_id)
+
+)
+
+select * from final
+limit 500
+/* limit added automatically by dbt cloud */
+2021-12-21 09:33:40.194604 (Thread-1): 09:33:40  Opening a new connection, currently in state init
+2021-12-21 09:33:40.669868 (Thread-265): handling poll request
+2021-12-21 09:33:40.670299 (Thread-265): 09:33:40  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'd1c33850-30e3-411e-998d-badc6b04d1da', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8a38367d90>]}
+2021-12-21 09:33:40.671270 (Thread-265): sending response (<Response 4901 bytes [200 OK]>) to 10.0.30.119
+2021-12-21 09:33:41.376111 (Thread-1): 09:33:41  SQL status: SUCCESS 100 in 1.18 seconds
+2021-12-21 09:33:41.380596 (Thread-1): 09:33:41  finished collecting timing info
+2021-12-21 09:33:41.380818 (Thread-1): 09:33:41  On rpc.jaffle_shop.request: Close
+2021-12-21 09:33:42.115902 (Thread-266): handling poll request
+2021-12-21 09:33:42.116278 (Thread-266): 09:33:42  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'd1c33850-30e3-411e-998d-badc6b04d1da', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8a38367f70>]}
+2021-12-21 09:33:42.117752 (Thread-266): sending response (<Response 14054 bytes [200 OK]>) to 10.0.20.134
+2021-12-21 10:08:31.201469 (Thread-267): handling status request
+2021-12-21 10:08:31.203109 (Thread-267): 10:08:31  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'd1c33850-30e3-411e-998d-badc6b04d1da', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8a383679d0>]}
+2021-12-21 10:08:31.203614 (Thread-267): sending response (<Response 1563 bytes [200 OK]>) to 10.0.35.194
