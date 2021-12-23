@@ -6752,3 +6752,1075 @@ There are 1 unused configuration paths:
 2021-12-21 17:17:56.041550 (Thread-369): handling status request
 2021-12-21 17:17:56.041932 (Thread-369): 17:17:56  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'edd7774f-d9fd-4a47-9902-05cfb393cfc0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe26452a2e0>]}
 2021-12-21 17:17:56.042414 (Thread-369): sending response (<Response 1682 bytes [200 OK]>) to 10.0.10.77
+2021-12-21 17:17:58.021518 (Thread-370): 17:17:58  Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+2021-12-21 17:17:58.021734 (Thread-370): 17:17:58  Partial parsing enabled, no changes found, skipping parsing
+2021-12-21 17:17:58.022165 (Thread-370): 17:17:58  [WARNING]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.jaffle_shop.example
+
+2021-12-21 17:17:58.027504 (Thread-370): 17:17:58  Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'edd7774f-d9fd-4a47-9902-05cfb393cfc0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe2644675b0>]}
+2021-12-21 17:17:58.839421 (Thread-371): handling status request
+2021-12-21 17:17:58.839839 (Thread-371): 17:17:58  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'edd7774f-d9fd-4a47-9902-05cfb393cfc0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe264460e80>]}
+2021-12-21 17:17:58.840318 (Thread-371): sending response (<Response 1682 bytes [200 OK]>) to 10.0.1.140
+2021-12-21 17:17:58.856354 (Thread-372): handling status request
+2021-12-21 17:17:58.856663 (Thread-372): 17:17:58  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'edd7774f-d9fd-4a47-9902-05cfb393cfc0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe2644608e0>]}
+2021-12-21 17:17:58.857102 (Thread-372): sending response (<Response 1682 bytes [200 OK]>) to 10.0.40.37
+2021-12-21 17:17:59.061873 (Thread-373): handling status request
+2021-12-21 17:17:59.062231 (Thread-373): 17:17:59  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'edd7774f-d9fd-4a47-9902-05cfb393cfc0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe26452afd0>]}
+2021-12-21 17:17:59.062694 (Thread-373): sending response (<Response 1660 bytes [200 OK]>) to 10.0.17.139
+2021-12-21 17:17:59.068513 (Thread-374): handling list request
+2021-12-21 17:17:59.079358 (Thread-374): 17:17:59  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'edd7774f-d9fd-4a47-9902-05cfb393cfc0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe2645d9b20>]}
+2021-12-21 17:17:59.107953 (Thread-374): 17:17:59  Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'edd7774f-d9fd-4a47-9902-05cfb393cfc0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe264467eb0>]}
+2021-12-21 17:17:59.108261 (Thread-374): 17:17:59  Found 5 models, 7 tests, 0 snapshots, 0 analyses, 179 macros, 0 operations, 0 seed files, 3 sources, 0 exposures, 0 metrics
+2021-12-21 17:17:59.109255 (Thread-374): 17:17:59  The selection criterion '+logs/dbt.log.legacy+' does not match any nodes
+2021-12-21 17:17:59.109418 (Thread-374): 17:17:59  No nodes selected!
+2021-12-21 17:17:59.110754 (Thread-374): sending response (<Response 1936 bytes [200 OK]>) to 10.0.17.139
+2021-12-21 21:59:28.685465 (MainThread): Running with dbt=1.0.0
+2021-12-21 21:59:28.903405 (MainThread): running dbt with arguments Namespace(cls=<class 'dbt_rpc.task.server.RPCServerTask'>, debug=None, defer=None, exclude=None, fail_fast=None, host='0.0.0.0', log_cache_events=False, log_format=None, models=None, partial_parse=True, port=8580, printer_width=None, profile='user', profiles_dir='/usr/src/develop/.dbt', project_dir=None, record_timing_info=None, rpc_method=None, send_anonymous_usage_stats=None, single_threaded=False, state=None, static_parser=None, target=None, threads=None, use_colors=None, use_experimental_parser=None, vars='{}', version_check=None, warn_error=None, which='rpc', write_json=None)
+2021-12-21 21:59:28.912451 (MainThread): Tracking: tracking
+2021-12-21 21:59:28.912798 (MainThread): 21:59:28  Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4d08148eb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4cdc710cd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4cdc7170d0>]}
+2021-12-21 21:59:28.917411 (MainThread): Serving RPC server at 0.0.0.0:8580, pid=21
+2021-12-21 21:59:28.917705 (MainThread): Supported methods: ['build', 'cli_args', 'compile', 'compile_sql', 'deps', 'docs.generate', 'gc', 'get-manifest', 'kill', 'list', 'poll', 'ps', 'run', 'run-operation', 'run_sql', 'seed', 'snapshot', 'snapshot-freshness', 'source-freshness', 'status', 'test']
+2021-12-21 21:59:28.917845 (MainThread): Send requests to http://localhost:8580/jsonrpc
+2021-12-21 21:59:29.005790 (Thread-12): 21:59:29  Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+2021-12-21 21:59:29.005978 (Thread-12): 21:59:29  Partial parsing enabled, no changes found, skipping parsing
+2021-12-21 21:59:29.006507 (Thread-12): 21:59:29  [WARNING]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.jaffle_shop.example
+
+2021-12-21 21:59:29.012179 (Thread-12): 21:59:29  Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '2b6d19a1-e3c6-4382-b95b-87eb7d464610', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4cdc642fa0>]}
+2021-12-23 09:13:32.379788 (MainThread): Running with dbt=1.0.0
+2021-12-23 09:13:32.609258 (MainThread): running dbt with arguments Namespace(cls=<class 'dbt_rpc.task.server.RPCServerTask'>, debug=None, defer=None, exclude=None, fail_fast=None, host='0.0.0.0', log_cache_events=False, log_format=None, models=None, partial_parse=True, port=8580, printer_width=None, profile='user', profiles_dir='/usr/src/develop/.dbt', project_dir=None, record_timing_info=None, rpc_method=None, send_anonymous_usage_stats=None, single_threaded=False, state=None, static_parser=None, target=None, threads=None, use_colors=None, use_experimental_parser=None, vars='{}', version_check=None, warn_error=None, which='rpc', write_json=None)
+2021-12-23 09:13:32.618294 (MainThread): Tracking: tracking
+2021-12-23 09:13:32.618594 (MainThread): 09:13:32  Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff315b20f70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2ff740d00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2ff762340>]}
+2021-12-23 09:13:32.623218 (MainThread): Serving RPC server at 0.0.0.0:8580, pid=21
+2021-12-23 09:13:32.623528 (MainThread): Supported methods: ['build', 'cli_args', 'compile', 'compile_sql', 'deps', 'docs.generate', 'gc', 'get-manifest', 'kill', 'list', 'poll', 'ps', 'run', 'run-operation', 'run_sql', 'seed', 'snapshot', 'snapshot-freshness', 'source-freshness', 'status', 'test']
+2021-12-23 09:13:32.623682 (MainThread): Send requests to http://localhost:8580/jsonrpc
+2021-12-23 09:13:32.802630 (Thread-12): 09:13:32  Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+2021-12-23 09:13:32.802850 (Thread-12): 09:13:32  Partial parsing enabled, no changes found, skipping parsing
+2021-12-23 09:13:32.803481 (Thread-12): 09:13:32  [WARNING]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.jaffle_shop.example
+
+2021-12-23 09:13:32.809610 (Thread-12): 09:13:32  Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fe68dfa0>]}
+2021-12-23 09:13:59.810056 (Thread-13): handling status request
+2021-12-23 09:13:59.810451 (Thread-13): 09:13:59  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fe6f5880>]}
+2021-12-23 09:13:59.811103 (Thread-13): sending response (<Response 1678 bytes [200 OK]>) to 10.0.38.38
+2021-12-23 09:13:59.829130 (Thread-14): handling ps request
+2021-12-23 09:13:59.829360 (Thread-14): 09:13:59  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fe6f5550>]}
+2021-12-23 09:13:59.829705 (Thread-14): sending response (<Response 105 bytes [200 OK]>) to 10.0.23.128
+2021-12-23 09:13:59.987233 (Thread-15): handling status request
+2021-12-23 09:13:59.987596 (Thread-15): 09:13:59  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fe6f5400>]}
+2021-12-23 09:13:59.988067 (Thread-15): sending response (<Response 1678 bytes [200 OK]>) to 10.0.33.13
+2021-12-23 09:13:59.989163 (Thread-16): handling status request
+2021-12-23 09:13:59.989481 (Thread-16): 09:13:59  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff342264c40>]}
+2021-12-23 09:13:59.989840 (Thread-16): sending response (<Response 1678 bytes [200 OK]>) to 10.0.1.233
+2021-12-23 09:14:02.544936 (Thread-17): handling status request
+2021-12-23 09:14:02.545298 (Thread-17): 09:14:02  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fe6f4cd0>]}
+2021-12-23 09:14:02.545945 (Thread-17): sending response (<Response 1656 bytes [200 OK]>) to 10.0.3.82
+2021-12-23 09:14:02.546538 (Thread-18): handling status request
+2021-12-23 09:14:02.547652 (Thread-19): handling status request
+2021-12-23 09:14:02.547909 (Thread-18): 09:14:02  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2ff762550>]}
+2021-12-23 09:14:02.548344 (Thread-19): 09:14:02  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2ff765eb0>]}
+2021-12-23 09:14:02.549012 (Thread-18): sending response (<Response 1656 bytes [200 OK]>) to 10.0.3.82
+2021-12-23 09:14:02.549514 (Thread-20): handling status request
+2021-12-23 09:14:02.550070 (Thread-19): sending response (<Response 1656 bytes [200 OK]>) to 10.0.3.82
+2021-12-23 09:14:02.550784 (Thread-20): 09:14:02  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fe68dc10>]}
+2021-12-23 09:14:02.551522 (Thread-20): sending response (<Response 1656 bytes [200 OK]>) to 10.0.3.82
+2021-12-23 09:14:02.553380 (Thread-21): handling list request
+2021-12-23 09:14:02.553598 (Thread-21): 09:14:02  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fe68dca0>]}
+2021-12-23 09:14:02.557317 (Thread-22): handling list request
+2021-12-23 09:14:02.648699 (Thread-22): sending response (<Response 214 bytes [200 OK]>) to 10.0.3.82
+2021-12-23 09:14:02.721387 (Thread-25): handling status request
+2021-12-23 09:14:02.721868 (Thread-25): 09:14:02  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fe6f4e20>]}
+2021-12-23 09:14:02.722380 (Thread-25): sending response (<Response 1656 bytes [200 OK]>) to 10.0.3.82
+2021-12-23 09:14:02.728474 (Thread-26): handling list request
+2021-12-23 09:14:02.728719 (Thread-26): 09:14:02  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fe6938b0>]}
+2021-12-23 09:14:02.938682 (Thread-31): sending response (<Response 214 bytes [200 OK]>) to 10.0.3.82
+2021-12-23 09:14:10.350722 (Thread-33): handling status request
+2021-12-23 09:14:10.351149 (Thread-33): 09:14:10  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fc5cbdf0>]}
+2021-12-23 09:14:10.351649 (Thread-33): sending response (<Response 1656 bytes [200 OK]>) to 10.0.3.82
+2021-12-23 09:14:10.357645 (Thread-34): handling list request
+2021-12-23 09:14:10.357899 (Thread-34): 09:14:10  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fc5cb7f0>]}
+2021-12-23 09:14:10.407582 (Thread-34): 09:14:10  Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff315b20a30>]}
+2021-12-23 09:14:10.407902 (Thread-34): 09:14:10  Found 5 models, 7 tests, 0 snapshots, 0 analyses, 179 macros, 0 operations, 0 seed files, 3 sources, 0 exposures, 0 metrics
+2021-12-23 09:14:10.412816 (Thread-34): sending response (<Response 7775 bytes [200 OK]>) to 10.0.3.82
+2021-12-23 09:14:22.923173 (Thread-35): handling status request
+2021-12-23 09:14:22.925039 (Thread-35): 09:14:22  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fc6312b0>]}
+2021-12-23 09:14:22.925506 (Thread-35): sending response (<Response 1656 bytes [200 OK]>) to 10.0.3.82
+2021-12-23 09:14:22.930934 (Thread-36): handling list request
+2021-12-23 09:14:22.931224 (Thread-36): 09:14:22  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fc631820>]}
+2021-12-23 09:14:22.969368 (Thread-36): 09:14:22  Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fc60f760>]}
+2021-12-23 09:14:22.969659 (Thread-36): 09:14:22  Found 5 models, 7 tests, 0 snapshots, 0 analyses, 179 macros, 0 operations, 0 seed files, 3 sources, 0 exposures, 0 metrics
+2021-12-23 09:14:22.974437 (Thread-36): sending response (<Response 7775 bytes [200 OK]>) to 10.0.3.82
+2021-12-23 09:14:39.162118 (Thread-37): 09:14:39  Partial parsing enabled: 0 files deleted, 1 files added, 0 files changed.
+2021-12-23 09:14:39.162515 (Thread-37): 09:14:39  Partial parsing: added file: jaffle_shop://models/mart/core/int_orders__pivoted.sql
+2021-12-23 09:14:39.173468 (Thread-37): 09:14:39  1699: static parser successfully parsed mart/core/int_orders__pivoted.sql
+2021-12-23 09:14:39.275721 (Thread-37): 09:14:39  [WARNING]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.jaffle_shop.example
+
+2021-12-23 09:14:39.280788 (Thread-37): 09:14:39  Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fc536d30>]}
+2021-12-23 09:14:39.508704 (Thread-38): handling status request
+2021-12-23 09:14:39.509058 (Thread-38): 09:14:39  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fc5aa7c0>]}
+2021-12-23 09:14:39.509532 (Thread-38): sending response (<Response 1994 bytes [200 OK]>) to 10.0.3.82
+2021-12-23 09:14:39.526447 (Thread-39): handling list request
+2021-12-23 09:14:39.526692 (Thread-39): 09:14:39  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fc5aa4c0>]}
+2021-12-23 09:14:39.591235 (Thread-39): 09:14:39  Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fc507bb0>]}
+2021-12-23 09:14:39.591608 (Thread-39): 09:14:39  Found 6 models, 7 tests, 0 snapshots, 0 analyses, 179 macros, 0 operations, 0 seed files, 3 sources, 0 exposures, 0 metrics
+2021-12-23 09:14:39.595210 (Thread-39): sending response (<Response 7775 bytes [200 OK]>) to 10.0.3.82
+2021-12-23 09:14:39.925345 (Thread-40): handling status request
+2021-12-23 09:14:39.925708 (Thread-40): 09:14:39  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fc60f250>]}
+2021-12-23 09:14:39.926203 (Thread-40): sending response (<Response 2016 bytes [200 OK]>) to 10.0.46.244
+2021-12-23 09:14:40.003752 (Thread-41): handling status request
+2021-12-23 09:14:40.004100 (Thread-41): 09:14:40  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fc5aacd0>]}
+2021-12-23 09:14:40.004578 (Thread-41): sending response (<Response 2016 bytes [200 OK]>) to 10.0.6.80
+2021-12-23 09:14:41.046504 (Thread-42): handling status request
+2021-12-23 09:14:41.046874 (Thread-42): 09:14:41  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fc5aa700>]}
+2021-12-23 09:14:41.047388 (Thread-42): sending response (<Response 1994 bytes [200 OK]>) to 10.0.3.82
+2021-12-23 09:14:41.052765 (Thread-43): handling list request
+2021-12-23 09:14:41.053003 (Thread-43): 09:14:41  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fc5aab80>]}
+2021-12-23 09:14:41.101753 (Thread-43): 09:14:41  Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fc536be0>]}
+2021-12-23 09:14:41.102059 (Thread-43): 09:14:41  Found 6 models, 7 tests, 0 snapshots, 0 analyses, 179 macros, 0 operations, 0 seed files, 3 sources, 0 exposures, 0 metrics
+2021-12-23 09:14:41.105445 (Thread-43): sending response (<Response 7775 bytes [200 OK]>) to 10.0.3.82
+2021-12-23 09:14:41.177720 (Thread-44): handling status request
+2021-12-23 09:14:41.178054 (Thread-44): 09:14:41  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fc60f220>]}
+2021-12-23 09:14:41.178546 (Thread-44): sending response (<Response 1994 bytes [200 OK]>) to 10.0.3.82
+2021-12-23 09:14:41.184725 (Thread-45): handling list request
+2021-12-23 09:14:41.184955 (Thread-45): 09:14:41  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fc538130>]}
+2021-12-23 09:14:41.231899 (Thread-45): 09:14:41  Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fc0cc0a0>]}
+2021-12-23 09:14:41.232197 (Thread-45): 09:14:41  Found 6 models, 7 tests, 0 snapshots, 0 analyses, 179 macros, 0 operations, 0 seed files, 3 sources, 0 exposures, 0 metrics
+2021-12-23 09:14:41.233441 (Thread-45): 09:14:41  The selection criterion '+models/mart/core/int_orders__pivoted.sql+' does not match any nodes
+2021-12-23 09:14:41.233597 (Thread-45): 09:14:41  No nodes selected!
+2021-12-23 09:14:41.234822 (Thread-45): sending response (<Response 1945 bytes [200 OK]>) to 10.0.3.82
+2021-12-23 09:14:44.808946 (Thread-46): handling status request
+2021-12-23 09:14:44.809310 (Thread-46): 09:14:44  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fc50ca30>]}
+2021-12-23 09:14:44.809787 (Thread-46): sending response (<Response 1994 bytes [200 OK]>) to 10.0.3.82
+2021-12-23 09:14:44.814793 (Thread-47): handling list request
+2021-12-23 09:14:44.815066 (Thread-47): 09:14:44  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fc0cc700>]}
+2021-12-23 09:14:44.856105 (Thread-47): 09:14:44  Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fc0d1070>]}
+2021-12-23 09:14:44.856385 (Thread-47): 09:14:44  Found 6 models, 7 tests, 0 snapshots, 0 analyses, 179 macros, 0 operations, 0 seed files, 3 sources, 0 exposures, 0 metrics
+2021-12-23 09:14:44.859956 (Thread-47): sending response (<Response 7775 bytes [200 OK]>) to 10.0.3.82
+2021-12-23 09:14:46.168409 (Thread-48): handling status request
+2021-12-23 09:14:46.168786 (Thread-48): 09:14:46  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fc0cc550>]}
+2021-12-23 09:14:46.169260 (Thread-48): sending response (<Response 2016 bytes [200 OK]>) to 10.0.37.31
+2021-12-23 09:14:46.683726 (Thread-49): handling run_sql request
+2021-12-23 09:14:46.684093 (Thread-49): 09:14:46  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fc0d1ca0>]}
+2021-12-23 09:14:48.876128 (Thread-49): sending response (<Response 138 bytes [200 OK]>) to 10.0.35.231
+2021-12-23 09:14:48.901190 (MainThread): 09:14:48  Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'ebc13846-ab08-4303-9c6e-81557005b73e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbf7ee1fd90>]}
+2021-12-23 09:14:48.901810 (MainThread): 09:14:48  Found 6 models, 7 tests, 0 snapshots, 0 analyses, 179 macros, 0 operations, 0 seed files, 3 sources, 0 exposures, 0 metrics
+2021-12-23 09:14:48.902391 (Thread-1): 09:14:48  Acquiring new snowflake connection "rpc.jaffle_shop.request"
+2021-12-23 09:14:48.902523 (Thread-1): 09:14:48  Began compiling node rpc.jaffle_shop.request
+2021-12-23 09:14:48.902614 (Thread-1): 09:14:48  Compiling rpc.jaffle_shop.request
+2021-12-23 09:14:48.904848 (Thread-1): 09:14:48  finished collecting timing info
+2021-12-23 09:14:48.904973 (Thread-1): 09:14:48  Began executing node rpc.jaffle_shop.request
+2021-12-23 09:14:48.905938 (Thread-1): 09:14:48  Using snowflake connection "rpc.jaffle_shop.request"
+2021-12-23 09:14:48.906027 (Thread-1): 09:14:48  On rpc.jaffle_shop.request: with orders as  (
+    select * from ANALYTICS.dbt_dsalvati.stg_orders
+),
+
+payments as (
+    select * from ANALYTICS.dbt_dsalvati.stg_payments
+),
+
+order_payments as (
+    select
+        order_id,
+        sum(case when status = 'success' then amount end) as amount
+
+    from payments
+    group by 1
+),
+
+final as (
+
+    select
+        orders.order_id,
+        orders.customer_id,
+        orders.order_date,
+        coalesce(order_payments.amount, 0) as amount
+
+    from orders
+    left join order_payments using (order_id)
+)
+
+select * from final
+limit 500
+/* limit added automatically by dbt cloud */
+2021-12-23 09:14:48.906108 (Thread-1): 09:14:48  Opening a new connection, currently in state init
+2021-12-23 09:14:49.295614 (Thread-50): handling poll request
+2021-12-23 09:14:49.296088 (Thread-50): 09:14:49  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fc0ddeb0>]}
+2021-12-23 09:14:49.296944 (Thread-50): sending response (<Response 4261 bytes [200 OK]>) to 10.0.4.10
+2021-12-23 09:14:50.572437 (Thread-1): 09:14:50  SQL status: SUCCESS 99 in 1.67 seconds
+2021-12-23 09:14:50.576070 (Thread-1): 09:14:50  finished collecting timing info
+2021-12-23 09:14:50.576276 (Thread-1): 09:14:50  On rpc.jaffle_shop.request: Close
+2021-12-23 09:14:50.699348 (Thread-51): handling poll request
+2021-12-23 09:14:50.699709 (Thread-51): 09:14:50  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fc0ea250>]}
+2021-12-23 09:14:50.700206 (Thread-51): sending response (<Response 1361 bytes [200 OK]>) to 10.0.20.71
+2021-12-23 09:14:52.019208 (Thread-52): handling poll request
+2021-12-23 09:14:52.019588 (Thread-52): 09:14:52  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fc0ea700>]}
+2021-12-23 09:14:52.020877 (Thread-52): sending response (<Response 7998 bytes [200 OK]>) to 10.0.4.163
+2021-12-23 09:15:02.240168 (Thread-53): handling status request
+2021-12-23 09:15:02.240538 (Thread-53): 09:15:02  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fc0ea8b0>]}
+2021-12-23 09:15:02.241298 (Thread-53): sending response (<Response 2016 bytes [200 OK]>) to 10.0.23.130
+2021-12-23 09:15:02.325705 (Thread-54): handling ps request
+2021-12-23 09:15:02.326066 (Thread-54): 09:15:02  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fc538130>]}
+2021-12-23 09:15:02.326948 (Thread-54): sending response (<Response 4517 bytes [200 OK]>) to 10.0.6.80
+2021-12-23 09:15:02.348050 (Thread-55): handling status request
+2021-12-23 09:15:02.348335 (Thread-55): 09:15:02  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fc0eac10>]}
+2021-12-23 09:15:02.348768 (Thread-55): sending response (<Response 2016 bytes [200 OK]>) to 10.0.26.158
+2021-12-23 09:15:02.356569 (Thread-56): handling status request
+2021-12-23 09:15:02.356800 (Thread-56): 09:15:02  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fc0ea370>]}
+2021-12-23 09:15:02.380950 (Thread-56): sending response (<Response 2016 bytes [200 OK]>) to 10.0.33.13
+2021-12-23 09:16:33.811237 (Thread-57): handling status request
+2021-12-23 09:16:33.813508 (Thread-57): 09:16:33  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fc0ea400>]}
+2021-12-23 09:16:33.814045 (Thread-57): sending response (<Response 2016 bytes [200 OK]>) to 10.0.6.80
+2021-12-23 09:16:34.150580 (Thread-58): handling run_sql request
+2021-12-23 09:16:34.150975 (Thread-58): 09:16:34  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fc0ead60>]}
+2021-12-23 09:16:36.377581 (Thread-58): sending response (<Response 138 bytes [200 OK]>) to 10.0.33.13
+2021-12-23 09:16:36.408371 (MainThread): 09:16:36  Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '045bcd44-5e3b-414a-abda-a5257e8bacf6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7dfa705340>]}
+2021-12-23 09:16:36.409015 (MainThread): 09:16:36  Found 6 models, 7 tests, 0 snapshots, 0 analyses, 179 macros, 0 operations, 0 seed files, 3 sources, 0 exposures, 0 metrics
+2021-12-23 09:16:36.409602 (Thread-1): 09:16:36  Acquiring new snowflake connection "rpc.jaffle_shop.request"
+2021-12-23 09:16:36.409732 (Thread-1): 09:16:36  Began compiling node rpc.jaffle_shop.request
+2021-12-23 09:16:36.409826 (Thread-1): 09:16:36  Compiling rpc.jaffle_shop.request
+2021-12-23 09:16:36.412238 (Thread-1): 09:16:36  finished collecting timing info
+2021-12-23 09:16:36.412367 (Thread-1): 09:16:36  Began executing node rpc.jaffle_shop.request
+2021-12-23 09:16:36.412951 (Thread-1): 09:16:36  Using snowflake connection "rpc.jaffle_shop.request"
+2021-12-23 09:16:36.413051 (Thread-1): 09:16:36  On rpc.jaffle_shop.request: with payments as (
+   select * from ANALYTICS.dbt_dsalvati.stg_payments
+),
+
+select * from payments
+limit 500
+/* limit added automatically by dbt cloud */
+2021-12-23 09:16:36.413134 (Thread-1): 09:16:36  Opening a new connection, currently in state init
+2021-12-23 09:16:36.929793 (Thread-59): handling poll request
+2021-12-23 09:16:36.930224 (Thread-59): 09:16:36  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fc0852e0>]}
+2021-12-23 09:16:36.931129 (Thread-59): sending response (<Response 3807 bytes [200 OK]>) to 10.0.4.163
+2021-12-23 09:16:37.201937 (Thread-1): 09:16:37  Snowflake adapter: Snowflake query id: 01a1232c-0000-03e8-0000-000012292551
+2021-12-23 09:16:37.202249 (Thread-1): 09:16:37  Snowflake adapter: Snowflake error: 001003 (42000): SQL compilation error:
+syntax error line 5 at position 0 unexpected 'select'.
+2021-12-23 09:16:37.202474 (Thread-1): 09:16:37  finished collecting timing info
+2021-12-23 09:16:37.202737 (Thread-1): 09:16:37  On rpc.jaffle_shop.request: Close
+2021-12-23 09:16:37.384008 (Thread-1): Got an exception: Database Error
+  001003 (42000): SQL compilation error:
+  syntax error line 5 at position 0 unexpected 'select'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/snowflake/connections.py", line 204, in exception_handler
+    yield
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/sql/connections.py", line 74, in add_query
+    cursor.execute(sql, bindings)
+  File "/usr/local/lib/python3.8/dist-packages/snowflake/connector/cursor.py", line 790, in execute
+    Error.errorhandler_wrapper(
+  File "/usr/local/lib/python3.8/dist-packages/snowflake/connector/errors.py", line 272, in errorhandler_wrapper
+    handed_over = Error.hand_to_other_handler(
+  File "/usr/local/lib/python3.8/dist-packages/snowflake/connector/errors.py", line 327, in hand_to_other_handler
+    cursor.errorhandler(connection, cursor, error_class, error_value)
+  File "/usr/local/lib/python3.8/dist-packages/snowflake/connector/errors.py", line 206, in default_errorhandler
+    raise error_class(
+snowflake.connector.errors.ProgrammingError: 001003 (42000): SQL compilation error:
+syntax error line 5 at position 0 unexpected 'select'.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/dbt/task/base.py", line 361, in safe_run
+    result = self.compile_and_execute(manifest, ctx)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/task/base.py", line 314, in compile_and_execute
+    result = self.run(ctx.node, manifest)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/task/base.py", line 403, in run
+    return self.execute(compiled_node, manifest)
+  File "/usr/local/lib/python3.8/dist-packages/dbt_rpc/rpc/node_runners.py", line 90, in execute
+    _, execute_result = self.adapter.execute(
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/base/impl.py", line 225, in execute
+    return self.connections.execute(
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/sql/connections.py", line 127, in execute
+    _, cursor = self.add_query(sql, auto_begin)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/snowflake/connections.py", line 431, in add_query
+    connection, cursor = super().add_query(
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/sql/connections.py", line 83, in add_query
+    return connection, cursor
+  File "/usr/lib/python3.8/contextlib.py", line 131, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/snowflake/connections.py", line 221, in exception_handler
+    raise DatabaseException(msg)
+dbt.exceptions.DatabaseException: Database Error
+  001003 (42000): SQL compilation error:
+  syntax error line 5 at position 0 unexpected 'select'.
+2021-12-23 09:16:37.384982 (Thread-1): Got exception RPCException(10003, Database Error, {'type': 'DatabaseException', 'message': "Database Error in rpc request (from remote system)\n  001003 (42000): SQL compilation error:\n  syntax error line 5 at position 0 unexpected 'select'.", 'raw_sql': "{%- set payment_methods = ['bank_transfer', 'credit_card', 'coupon', 'gift_card']  -%}\n\nwith payments as (\n   select * from {{ ref('stg_payments') }}\n),\n\nselect * from payments\nlimit 500\n/* limit added automatically by dbt cloud */", 'compiled_sql': 'with payments as (\n   select * from ANALYTICS.dbt_dsalvati.stg_payments\n),\n\nselect * from payments\nlimit 500\n/* limit added automatically by dbt cloud */', 'tags': None}, None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/dbt_rpc/task/sql_commands.py", line 147, in _in_thread
+    self.node_results.append(runner.safe_run(self.manifest))
+  File "/usr/local/lib/python3.8/dist-packages/dbt/task/base.py", line 377, in safe_run
+    result = self.error_result(ctx.node, error, started, [])
+  File "/usr/local/lib/python3.8/dist-packages/dbt_rpc/rpc/node_runners.py", line 56, in error_result
+    raise error
+dbt_rpc.rpc.error.RPCException: RPCException(10003, Database Error, {'type': 'DatabaseException', 'message': "Database Error in rpc request (from remote system)\n  001003 (42000): SQL compilation error:\n  syntax error line 5 at position 0 unexpected 'select'.", 'raw_sql': "{%- set payment_methods = ['bank_transfer', 'credit_card', 'coupon', 'gift_card']  -%}\n\nwith payments as (\n   select * from {{ ref('stg_payments') }}\n),\n\nselect * from payments\nlimit 500\n/* limit added automatically by dbt cloud */", 'compiled_sql': 'with payments as (\n   select * from ANALYTICS.dbt_dsalvati.stg_payments\n),\n\nselect * from payments\nlimit 500\n/* limit added automatically by dbt cloud */', 'tags': None}, None)
+2021-12-23 09:16:38.301277 (Thread-60): handling poll request
+2021-12-23 09:16:38.301652 (Thread-60): 09:16:38  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fc085700>]}
+2021-12-23 09:16:38.302259 (Thread-60): sending response (<Response 10810 bytes [200 OK]>) to 10.0.4.163
+2021-12-23 09:16:45.937761 (Thread-61): handling status request
+2021-12-23 09:16:45.938127 (Thread-61): 09:16:45  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fc085c40>]}
+2021-12-23 09:16:45.938655 (Thread-61): sending response (<Response 2016 bytes [200 OK]>) to 10.0.37.31
+2021-12-23 09:16:46.324596 (Thread-62): handling run_sql request
+2021-12-23 09:16:46.325007 (Thread-62): 09:16:46  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fc085f40>]}
+2021-12-23 09:16:48.491106 (Thread-62): sending response (<Response 138 bytes [200 OK]>) to 10.0.26.158
+2021-12-23 09:16:48.516400 (MainThread): 09:16:48  Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '64e5d0b6-4bbb-467b-92d0-11a931090ea3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8a12b984f0>]}
+2021-12-23 09:16:48.517006 (MainThread): 09:16:48  Found 6 models, 7 tests, 0 snapshots, 0 analyses, 179 macros, 0 operations, 0 seed files, 3 sources, 0 exposures, 0 metrics
+2021-12-23 09:16:48.517583 (Thread-1): 09:16:48  Acquiring new snowflake connection "rpc.jaffle_shop.request"
+2021-12-23 09:16:48.517712 (Thread-1): 09:16:48  Began compiling node rpc.jaffle_shop.request
+2021-12-23 09:16:48.517821 (Thread-1): 09:16:48  Compiling rpc.jaffle_shop.request
+2021-12-23 09:16:48.520081 (Thread-1): 09:16:48  finished collecting timing info
+2021-12-23 09:16:48.520209 (Thread-1): 09:16:48  Began executing node rpc.jaffle_shop.request
+2021-12-23 09:16:48.520773 (Thread-1): 09:16:48  Using snowflake connection "rpc.jaffle_shop.request"
+2021-12-23 09:16:48.520861 (Thread-1): 09:16:48  On rpc.jaffle_shop.request: with payments as (
+   select * from ANALYTICS.dbt_dsalvati.stg_payments
+)
+
+select * from payments
+limit 500
+/* limit added automatically by dbt cloud */
+2021-12-23 09:16:48.520940 (Thread-1): 09:16:48  Opening a new connection, currently in state init
+2021-12-23 09:16:49.065025 (Thread-63): handling poll request
+2021-12-23 09:16:49.065475 (Thread-63): 09:16:49  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fc08efd0>]}
+2021-12-23 09:16:49.066303 (Thread-63): sending response (<Response 3806 bytes [200 OK]>) to 10.0.22.219
+2021-12-23 09:16:49.404431 (Thread-1): 09:16:49  SQL status: SUCCESS 120 in 0.88 seconds
+2021-12-23 09:16:49.409333 (Thread-1): 09:16:49  finished collecting timing info
+2021-12-23 09:16:49.409627 (Thread-1): 09:16:49  On rpc.jaffle_shop.request: Close
+2021-12-23 09:16:50.556413 (Thread-64): handling poll request
+2021-12-23 09:16:50.556807 (Thread-64): 09:16:50  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fc0ea8b0>]}
+2021-12-23 09:16:50.558229 (Thread-64): sending response (<Response 11080 bytes [200 OK]>) to 10.0.23.128
+2021-12-23 09:21:18.062975 (Thread-65): handling status request
+2021-12-23 09:21:18.064929 (Thread-65): 09:21:18  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fc0dd1c0>]}
+2021-12-23 09:21:18.065459 (Thread-65): sending response (<Response 2016 bytes [200 OK]>) to 10.0.22.219
+2021-12-23 09:21:18.531295 (Thread-66): handling run_sql request
+2021-12-23 09:21:18.531640 (Thread-66): 09:21:18  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fc0dde50>]}
+2021-12-23 09:21:20.703005 (Thread-66): sending response (<Response 138 bytes [200 OK]>) to 10.0.7.207
+2021-12-23 09:21:20.732329 (MainThread): 09:21:20  Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'edf5cb87-2d17-49f2-932f-ec3b21f91106', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f38ee1f0eb0>]}
+2021-12-23 09:21:20.732869 (MainThread): 09:21:20  Found 6 models, 7 tests, 0 snapshots, 0 analyses, 179 macros, 0 operations, 0 seed files, 3 sources, 0 exposures, 0 metrics
+2021-12-23 09:21:20.733462 (Thread-1): 09:21:20  Acquiring new snowflake connection "rpc.jaffle_shop.request"
+2021-12-23 09:21:20.733592 (Thread-1): 09:21:20  Began compiling node rpc.jaffle_shop.request
+2021-12-23 09:21:20.733683 (Thread-1): 09:21:20  Compiling rpc.jaffle_shop.request
+2021-12-23 09:21:20.736660 (Thread-1): 09:21:20  finished collecting timing info
+2021-12-23 09:21:20.736789 (Thread-1): 09:21:20  Began executing node rpc.jaffle_shop.request
+2021-12-23 09:21:20.737896 (Thread-1): 09:21:20  Using snowflake connection "rpc.jaffle_shop.request"
+2021-12-23 09:21:20.737986 (Thread-1): 09:21:20  On rpc.jaffle_shop.request: with payments as (
+   select * from ANALYTICS.dbt_dsalvati.stg_payments
+),
+
+pivoted as (
+    select 
+        order_id,
+        
+        sum(case 
+                when payment_method = 'bank_transfer'
+                    then amount 
+                else 0 
+            end
+        ) as bank_transfer_amount
+        
+        sum(case 
+                when payment_method = 'credit_card'
+                    then amount 
+                else 0 
+            end
+        ) as credit_card_amount
+        
+        sum(case 
+                when payment_method = 'coupon'
+                    then amount 
+                else 0 
+            end
+        ) as coupon_amount
+        
+        sum(case 
+                when payment_method = 'gift_card'
+                    then amount 
+                else 0 
+            end
+        ) as gift_card_amount
+        
+)
+
+select * from payments
+limit 500
+/* limit added automatically by dbt cloud */
+2021-12-23 09:21:20.738067 (Thread-1): 09:21:20  Opening a new connection, currently in state init
+2021-12-23 09:21:21.058326 (Thread-67): handling poll request
+2021-12-23 09:21:21.058773 (Thread-67): 09:21:21  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fc0a0be0>]}
+2021-12-23 09:21:21.059673 (Thread-67): sending response (<Response 4622 bytes [200 OK]>) to 10.0.2.15
+2021-12-23 09:21:21.541772 (Thread-1): 09:21:21  Snowflake adapter: Snowflake query id: 01a12331-0000-03e8-0000-000012292559
+2021-12-23 09:21:21.542066 (Thread-1): 09:21:21  Snowflake adapter: Snowflake error: 001003 (42000): SQL compilation error:
+syntax error line 16 at position 8 unexpected 'sum'.
+syntax error line 16 at position 12 unexpected 'case'.
+syntax error line 21 at position 10 unexpected 'as'.
+2021-12-23 09:21:21.542242 (Thread-1): 09:21:21  finished collecting timing info
+2021-12-23 09:21:21.542435 (Thread-1): 09:21:21  On rpc.jaffle_shop.request: Close
+2021-12-23 09:21:21.717429 (Thread-1): Got an exception: Database Error
+  001003 (42000): SQL compilation error:
+  syntax error line 16 at position 8 unexpected 'sum'.
+  syntax error line 16 at position 12 unexpected 'case'.
+  syntax error line 21 at position 10 unexpected 'as'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/snowflake/connections.py", line 204, in exception_handler
+    yield
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/sql/connections.py", line 74, in add_query
+    cursor.execute(sql, bindings)
+  File "/usr/local/lib/python3.8/dist-packages/snowflake/connector/cursor.py", line 790, in execute
+    Error.errorhandler_wrapper(
+  File "/usr/local/lib/python3.8/dist-packages/snowflake/connector/errors.py", line 272, in errorhandler_wrapper
+    handed_over = Error.hand_to_other_handler(
+  File "/usr/local/lib/python3.8/dist-packages/snowflake/connector/errors.py", line 327, in hand_to_other_handler
+    cursor.errorhandler(connection, cursor, error_class, error_value)
+  File "/usr/local/lib/python3.8/dist-packages/snowflake/connector/errors.py", line 206, in default_errorhandler
+    raise error_class(
+snowflake.connector.errors.ProgrammingError: 001003 (42000): SQL compilation error:
+syntax error line 16 at position 8 unexpected 'sum'.
+syntax error line 16 at position 12 unexpected 'case'.
+syntax error line 21 at position 10 unexpected 'as'.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/dbt/task/base.py", line 361, in safe_run
+    result = self.compile_and_execute(manifest, ctx)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/task/base.py", line 314, in compile_and_execute
+    result = self.run(ctx.node, manifest)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/task/base.py", line 403, in run
+    return self.execute(compiled_node, manifest)
+  File "/usr/local/lib/python3.8/dist-packages/dbt_rpc/rpc/node_runners.py", line 90, in execute
+    _, execute_result = self.adapter.execute(
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/base/impl.py", line 225, in execute
+    return self.connections.execute(
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/sql/connections.py", line 127, in execute
+    _, cursor = self.add_query(sql, auto_begin)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/snowflake/connections.py", line 431, in add_query
+    connection, cursor = super().add_query(
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/sql/connections.py", line 83, in add_query
+    return connection, cursor
+  File "/usr/lib/python3.8/contextlib.py", line 131, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/snowflake/connections.py", line 221, in exception_handler
+    raise DatabaseException(msg)
+dbt.exceptions.DatabaseException: Database Error
+  001003 (42000): SQL compilation error:
+  syntax error line 16 at position 8 unexpected 'sum'.
+  syntax error line 16 at position 12 unexpected 'case'.
+  syntax error line 21 at position 10 unexpected 'as'.
+2021-12-23 09:21:21.718438 (Thread-1): Got exception RPCException(10003, Database Error, {'type': 'DatabaseException', 'message': "Database Error in rpc request (from remote system)\n  001003 (42000): SQL compilation error:\n  syntax error line 16 at position 8 unexpected 'sum'.\n  syntax error line 16 at position 12 unexpected 'case'.\n  syntax error line 21 at position 10 unexpected 'as'.", 'raw_sql': "{%- set payment_methods = ['bank_transfer', 'credit_card', 'coupon', 'gift_card']  -%}\n\nwith payments as (\n   select * from {{ ref('stg_payments') }}\n),\n\npivoted as (\n    select \n        order_id,\n        {% for payment_method in payment_methods %}\n        sum(case \n                when payment_method = '{{ payment_method }}'\n                    then amount \n                else 0 \n            end\n        ) as {{ payment_method }}_amount\n        {% endfor %}\n)\n\nselect * from payments\nlimit 500\n/* limit added automatically by dbt cloud */", 'compiled_sql': "with payments as (\n   select * from ANALYTICS.dbt_dsalvati.stg_payments\n),\n\npivoted as (\n    select \n        order_id,\n        \n        sum(case \n                when payment_method = 'bank_transfer'\n                    then amount \n                else 0 \n            end\n        ) as bank_transfer_amount\n        \n        sum(case \n                when payment_method = 'credit_card'\n                    then amount \n                else 0 \n            end\n        ) as credit_card_amount\n        \n        sum(case \n                when payment_method = 'coupon'\n                    then amount \n                else 0 \n            end\n        ) as coupon_amount\n        \n        sum(case \n                when payment_method = 'gift_card'\n                    then amount \n                else 0 \n            end\n        ) as gift_card_amount\n        \n)\n\nselect * from payments\nlimit 500\n/* limit added automatically by dbt cloud */", 'tags': None}, None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/dbt_rpc/task/sql_commands.py", line 147, in _in_thread
+    self.node_results.append(runner.safe_run(self.manifest))
+  File "/usr/local/lib/python3.8/dist-packages/dbt/task/base.py", line 377, in safe_run
+    result = self.error_result(ctx.node, error, started, [])
+  File "/usr/local/lib/python3.8/dist-packages/dbt_rpc/rpc/node_runners.py", line 56, in error_result
+    raise error
+dbt_rpc.rpc.error.RPCException: RPCException(10003, Database Error, {'type': 'DatabaseException', 'message': "Database Error in rpc request (from remote system)\n  001003 (42000): SQL compilation error:\n  syntax error line 16 at position 8 unexpected 'sum'.\n  syntax error line 16 at position 12 unexpected 'case'.\n  syntax error line 21 at position 10 unexpected 'as'.", 'raw_sql': "{%- set payment_methods = ['bank_transfer', 'credit_card', 'coupon', 'gift_card']  -%}\n\nwith payments as (\n   select * from {{ ref('stg_payments') }}\n),\n\npivoted as (\n    select \n        order_id,\n        {% for payment_method in payment_methods %}\n        sum(case \n                when payment_method = '{{ payment_method }}'\n                    then amount \n                else 0 \n            end\n        ) as {{ payment_method }}_amount\n        {% endfor %}\n)\n\nselect * from payments\nlimit 500\n/* limit added automatically by dbt cloud */", 'compiled_sql': "with payments as (\n   select * from ANALYTICS.dbt_dsalvati.stg_payments\n),\n\npivoted as (\n    select \n        order_id,\n        \n        sum(case \n                when payment_method = 'bank_transfer'\n                    then amount \n                else 0 \n            end\n        ) as bank_transfer_amount\n        \n        sum(case \n                when payment_method = 'credit_card'\n                    then amount \n                else 0 \n            end\n        ) as credit_card_amount\n        \n        sum(case \n                when payment_method = 'coupon'\n                    then amount \n                else 0 \n            end\n        ) as coupon_amount\n        \n        sum(case \n                when payment_method = 'gift_card'\n                    then amount \n                else 0 \n            end\n        ) as gift_card_amount\n        \n)\n\nselect * from payments\nlimit 500\n/* limit added automatically by dbt cloud */", 'tags': None}, None)
+2021-12-23 09:21:22.571895 (Thread-68): handling poll request
+2021-12-23 09:21:22.572268 (Thread-68): 09:21:22  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fc0b2040>]}
+2021-12-23 09:21:22.572906 (Thread-68): sending response (<Response 15923 bytes [200 OK]>) to 10.0.37.31
+2021-12-23 09:21:40.441410 (Thread-69): handling status request
+2021-12-23 09:21:40.441781 (Thread-69): 09:21:40  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fc0b2580>]}
+2021-12-23 09:21:40.442352 (Thread-69): sending response (<Response 2016 bytes [200 OK]>) to 10.0.22.127
+2021-12-23 09:21:40.790372 (Thread-70): handling compile_sql request
+2021-12-23 09:21:40.790736 (Thread-70): 09:21:40  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fc0b2880>]}
+2021-12-23 09:21:42.965924 (Thread-70): sending response (<Response 138 bytes [200 OK]>) to 10.0.46.244
+2021-12-23 09:21:42.992085 (MainThread): 09:21:42  Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '93e716eb-fa94-4fe2-9a99-ae1344c30c1c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7c1e8edd90>]}
+2021-12-23 09:21:42.992612 (MainThread): 09:21:42  Found 6 models, 7 tests, 0 snapshots, 0 analyses, 179 macros, 0 operations, 0 seed files, 3 sources, 0 exposures, 0 metrics
+2021-12-23 09:21:42.993198 (Thread-1): 09:21:42  Acquiring new snowflake connection "rpc.jaffle_shop.request"
+2021-12-23 09:21:42.993332 (Thread-1): 09:21:42  Began compiling node rpc.jaffle_shop.request
+2021-12-23 09:21:42.993425 (Thread-1): 09:21:42  Compiling rpc.jaffle_shop.request
+2021-12-23 09:21:42.996115 (Thread-1): 09:21:42  finished collecting timing info
+2021-12-23 09:21:42.996245 (Thread-1): 09:21:42  Began executing node rpc.jaffle_shop.request
+2021-12-23 09:21:42.996343 (Thread-1): 09:21:42  finished collecting timing info
+2021-12-23 09:21:43.422528 (Thread-71): handling poll request
+2021-12-23 09:21:43.422971 (Thread-71): 09:21:43  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fc07a580>]}
+2021-12-23 09:21:43.424043 (Thread-71): sending response (<Response 7990 bytes [200 OK]>) to 10.0.23.130
+2021-12-23 09:23:39.189469 (Thread-72): handling status request
+2021-12-23 09:23:39.191673 (Thread-72): 09:23:39  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fc0850d0>]}
+2021-12-23 09:23:39.192210 (Thread-72): sending response (<Response 2016 bytes [200 OK]>) to 10.0.37.31
+2021-12-23 09:23:39.826903 (Thread-73): handling compile_sql request
+2021-12-23 09:23:39.827317 (Thread-73): 09:23:39  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fc038790>]}
+2021-12-23 09:23:42.048155 (Thread-73): sending response (<Response 138 bytes [200 OK]>) to 10.0.20.71
+2021-12-23 09:23:42.075824 (MainThread): 09:23:42  Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'f13aa18f-c7fd-49ed-b50a-93056dcccb65', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1f883f0e50>]}
+2021-12-23 09:23:42.076387 (MainThread): 09:23:42  Found 6 models, 7 tests, 0 snapshots, 0 analyses, 179 macros, 0 operations, 0 seed files, 3 sources, 0 exposures, 0 metrics
+2021-12-23 09:23:42.077037 (Thread-1): 09:23:42  Acquiring new snowflake connection "rpc.jaffle_shop.request"
+2021-12-23 09:23:42.077168 (Thread-1): 09:23:42  Began compiling node rpc.jaffle_shop.request
+2021-12-23 09:23:42.077261 (Thread-1): 09:23:42  Compiling rpc.jaffle_shop.request
+2021-12-23 09:23:42.080487 (Thread-1): 09:23:42  finished collecting timing info
+2021-12-23 09:23:42.080618 (Thread-1): 09:23:42  Began executing node rpc.jaffle_shop.request
+2021-12-23 09:23:42.080716 (Thread-1): 09:23:42  finished collecting timing info
+2021-12-23 09:23:42.538213 (Thread-74): handling poll request
+2021-12-23 09:23:42.538636 (Thread-74): 09:23:42  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fc03a970>]}
+2021-12-23 09:23:42.539716 (Thread-74): sending response (<Response 8085 bytes [200 OK]>) to 10.0.46.244
+2021-12-23 09:23:51.746440 (Thread-75): handling status request
+2021-12-23 09:23:51.746799 (Thread-75): 09:23:51  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fc03ab20>]}
+2021-12-23 09:23:51.747346 (Thread-75): sending response (<Response 2016 bytes [200 OK]>) to 10.0.4.163
+2021-12-23 09:23:52.187128 (Thread-76): handling run_sql request
+2021-12-23 09:23:52.187497 (Thread-76): 09:23:52  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fc03af10>]}
+2021-12-23 09:23:54.340018 (Thread-76): sending response (<Response 138 bytes [200 OK]>) to 10.0.4.10
+2021-12-23 09:23:54.366273 (MainThread): 09:23:54  Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '7f8274f0-2184-4a5b-a34b-df41aef1fcdd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f919448fd30>]}
+2021-12-23 09:23:54.366793 (MainThread): 09:23:54  Found 6 models, 7 tests, 0 snapshots, 0 analyses, 179 macros, 0 operations, 0 seed files, 3 sources, 0 exposures, 0 metrics
+2021-12-23 09:23:54.367392 (Thread-1): 09:23:54  Acquiring new snowflake connection "rpc.jaffle_shop.request"
+2021-12-23 09:23:54.367522 (Thread-1): 09:23:54  Began compiling node rpc.jaffle_shop.request
+2021-12-23 09:23:54.367614 (Thread-1): 09:23:54  Compiling rpc.jaffle_shop.request
+2021-12-23 09:23:54.370742 (Thread-1): 09:23:54  finished collecting timing info
+2021-12-23 09:23:54.370870 (Thread-1): 09:23:54  Began executing node rpc.jaffle_shop.request
+2021-12-23 09:23:54.371992 (Thread-1): 09:23:54  Using snowflake connection "rpc.jaffle_shop.request"
+2021-12-23 09:23:54.372083 (Thread-1): 09:23:54  On rpc.jaffle_shop.request: with payments as (
+   select * from ANALYTICS.dbt_dsalvati.stg_payments
+),
+
+pivoted as (
+    select 
+        order_id,
+        
+        sum(case 
+                when payment_method = 'bank_transfer'
+                    then amount 
+                else 0 
+            end
+        ) as bank_transfer_amount,
+        sum(case 
+                when payment_method = 'credit_card'
+                    then amount 
+                else 0 
+            end
+        ) as credit_card_amount,
+        sum(case 
+                when payment_method = 'coupon'
+                    then amount 
+                else 0 
+            end
+        ) as coupon_amount,
+        sum(case 
+                when payment_method = 'gift_card'
+                    then amount 
+                else 0 
+            end
+        ) as gift_card_amount
+)
+
+select * from payments
+limit 500
+/* limit added automatically by dbt cloud */
+2021-12-23 09:23:54.372162 (Thread-1): 09:23:54  Opening a new connection, currently in state init
+2021-12-23 09:23:54.828246 (Thread-77): handling poll request
+2021-12-23 09:23:54.828667 (Thread-77): 09:23:54  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fc049f70>]}
+2021-12-23 09:23:54.829474 (Thread-77): sending response (<Response 4585 bytes [200 OK]>) to 10.0.34.21
+2021-12-23 09:23:55.179811 (Thread-1): 09:23:55  Snowflake adapter: Snowflake query id: 01a12333-0000-03e8-0000-00001229255d
+2021-12-23 09:23:55.180028 (Thread-1): 09:23:55  Snowflake adapter: Snowflake error: 000904 (42000): SQL compilation error: error line 7 at position 8
+invalid identifier 'ORDER_ID'
+2021-12-23 09:23:55.180186 (Thread-1): 09:23:55  finished collecting timing info
+2021-12-23 09:23:55.180365 (Thread-1): 09:23:55  On rpc.jaffle_shop.request: Close
+2021-12-23 09:23:55.402492 (Thread-1): Got an exception: Database Error
+  000904 (42000): SQL compilation error: error line 7 at position 8
+  invalid identifier 'ORDER_ID'
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/snowflake/connections.py", line 204, in exception_handler
+    yield
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/sql/connections.py", line 74, in add_query
+    cursor.execute(sql, bindings)
+  File "/usr/local/lib/python3.8/dist-packages/snowflake/connector/cursor.py", line 790, in execute
+    Error.errorhandler_wrapper(
+  File "/usr/local/lib/python3.8/dist-packages/snowflake/connector/errors.py", line 272, in errorhandler_wrapper
+    handed_over = Error.hand_to_other_handler(
+  File "/usr/local/lib/python3.8/dist-packages/snowflake/connector/errors.py", line 327, in hand_to_other_handler
+    cursor.errorhandler(connection, cursor, error_class, error_value)
+  File "/usr/local/lib/python3.8/dist-packages/snowflake/connector/errors.py", line 206, in default_errorhandler
+    raise error_class(
+snowflake.connector.errors.ProgrammingError: 000904 (42000): SQL compilation error: error line 7 at position 8
+invalid identifier 'ORDER_ID'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/dbt/task/base.py", line 361, in safe_run
+    result = self.compile_and_execute(manifest, ctx)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/task/base.py", line 314, in compile_and_execute
+    result = self.run(ctx.node, manifest)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/task/base.py", line 403, in run
+    return self.execute(compiled_node, manifest)
+  File "/usr/local/lib/python3.8/dist-packages/dbt_rpc/rpc/node_runners.py", line 90, in execute
+    _, execute_result = self.adapter.execute(
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/base/impl.py", line 225, in execute
+    return self.connections.execute(
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/sql/connections.py", line 127, in execute
+    _, cursor = self.add_query(sql, auto_begin)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/snowflake/connections.py", line 431, in add_query
+    connection, cursor = super().add_query(
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/sql/connections.py", line 83, in add_query
+    return connection, cursor
+  File "/usr/lib/python3.8/contextlib.py", line 131, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/snowflake/connections.py", line 221, in exception_handler
+    raise DatabaseException(msg)
+dbt.exceptions.DatabaseException: Database Error
+  000904 (42000): SQL compilation error: error line 7 at position 8
+  invalid identifier 'ORDER_ID'
+2021-12-23 09:23:55.403473 (Thread-1): Got exception RPCException(10003, Database Error, {'type': 'DatabaseException', 'message': "Database Error in rpc request (from remote system)\n  000904 (42000): SQL compilation error: error line 7 at position 8\n  invalid identifier 'ORDER_ID'", 'raw_sql': "{%- set payment_methods = ['bank_transfer', 'credit_card', 'coupon', 'gift_card']  -%}\n\nwith payments as (\n   select * from {{ ref('stg_payments') }}\n),\n\npivoted as (\n    select \n        order_id,\n        {% for payment_method in payment_methods %}\n        sum(case \n                when payment_method = '{{ payment_method }}'\n                    then amount \n                else 0 \n            end\n        ) as {{ payment_method }}_amount\n        {%- if not loop.last -%}\n        ,\n        {%- else -%}\n        {%- endif -%}\n        {% endfor %}\n)\n\nselect * from payments\nlimit 500\n/* limit added automatically by dbt cloud */", 'compiled_sql': "with payments as (\n   select * from ANALYTICS.dbt_dsalvati.stg_payments\n),\n\npivoted as (\n    select \n        order_id,\n        \n        sum(case \n                when payment_method = 'bank_transfer'\n                    then amount \n                else 0 \n            end\n        ) as bank_transfer_amount,\n        sum(case \n                when payment_method = 'credit_card'\n                    then amount \n                else 0 \n            end\n        ) as credit_card_amount,\n        sum(case \n                when payment_method = 'coupon'\n                    then amount \n                else 0 \n            end\n        ) as coupon_amount,\n        sum(case \n                when payment_method = 'gift_card'\n                    then amount \n                else 0 \n            end\n        ) as gift_card_amount\n)\n\nselect * from payments\nlimit 500\n/* limit added automatically by dbt cloud */", 'tags': None}, None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/dbt_rpc/task/sql_commands.py", line 147, in _in_thread
+    self.node_results.append(runner.safe_run(self.manifest))
+  File "/usr/local/lib/python3.8/dist-packages/dbt/task/base.py", line 377, in safe_run
+    result = self.error_result(ctx.node, error, started, [])
+  File "/usr/local/lib/python3.8/dist-packages/dbt_rpc/rpc/node_runners.py", line 56, in error_result
+    raise error
+dbt_rpc.rpc.error.RPCException: RPCException(10003, Database Error, {'type': 'DatabaseException', 'message': "Database Error in rpc request (from remote system)\n  000904 (42000): SQL compilation error: error line 7 at position 8\n  invalid identifier 'ORDER_ID'", 'raw_sql': "{%- set payment_methods = ['bank_transfer', 'credit_card', 'coupon', 'gift_card']  -%}\n\nwith payments as (\n   select * from {{ ref('stg_payments') }}\n),\n\npivoted as (\n    select \n        order_id,\n        {% for payment_method in payment_methods %}\n        sum(case \n                when payment_method = '{{ payment_method }}'\n                    then amount \n                else 0 \n            end\n        ) as {{ payment_method }}_amount\n        {%- if not loop.last -%}\n        ,\n        {%- else -%}\n        {%- endif -%}\n        {% endfor %}\n)\n\nselect * from payments\nlimit 500\n/* limit added automatically by dbt cloud */", 'compiled_sql': "with payments as (\n   select * from ANALYTICS.dbt_dsalvati.stg_payments\n),\n\npivoted as (\n    select \n        order_id,\n        \n        sum(case \n                when payment_method = 'bank_transfer'\n                    then amount \n                else 0 \n            end\n        ) as bank_transfer_amount,\n        sum(case \n                when payment_method = 'credit_card'\n                    then amount \n                else 0 \n            end\n        ) as credit_card_amount,\n        sum(case \n                when payment_method = 'coupon'\n                    then amount \n                else 0 \n            end\n        ) as coupon_amount,\n        sum(case \n                when payment_method = 'gift_card'\n                    then amount \n                else 0 \n            end\n        ) as gift_card_amount\n)\n\nselect * from payments\nlimit 500\n/* limit added automatically by dbt cloud */", 'tags': None}, None)
+2021-12-23 09:23:56.189136 (Thread-78): handling poll request
+2021-12-23 09:23:56.189518 (Thread-78): 09:23:56  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fc0523d0>]}
+2021-12-23 09:23:56.190094 (Thread-78): sending response (<Response 15279 bytes [200 OK]>) to 10.0.46.244
+2021-12-23 09:24:07.854507 (Thread-79): handling status request
+2021-12-23 09:24:07.854873 (Thread-79): 09:24:07  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fc052910>]}
+2021-12-23 09:24:07.855431 (Thread-79): sending response (<Response 2016 bytes [200 OK]>) to 10.0.22.127
+2021-12-23 09:24:08.182104 (Thread-80): handling run_sql request
+2021-12-23 09:24:08.182464 (Thread-80): 09:24:08  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fc049eb0>]}
+2021-12-23 09:24:10.338822 (Thread-80): sending response (<Response 138 bytes [200 OK]>) to 10.0.2.15
+2021-12-23 09:24:10.365339 (MainThread): 09:24:10  Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '91470385-86e6-49aa-bf38-15bc3eed04b6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6dccfaff10>]}
+2021-12-23 09:24:10.365867 (MainThread): 09:24:10  Found 6 models, 7 tests, 0 snapshots, 0 analyses, 179 macros, 0 operations, 0 seed files, 3 sources, 0 exposures, 0 metrics
+2021-12-23 09:24:10.366444 (Thread-1): 09:24:10  Acquiring new snowflake connection "rpc.jaffle_shop.request"
+2021-12-23 09:24:10.366577 (Thread-1): 09:24:10  Began compiling node rpc.jaffle_shop.request
+2021-12-23 09:24:10.366669 (Thread-1): 09:24:10  Compiling rpc.jaffle_shop.request
+2021-12-23 09:24:10.369798 (Thread-1): 09:24:10  finished collecting timing info
+2021-12-23 09:24:10.369927 (Thread-1): 09:24:10  Began executing node rpc.jaffle_shop.request
+2021-12-23 09:24:10.371011 (Thread-1): 09:24:10  Using snowflake connection "rpc.jaffle_shop.request"
+2021-12-23 09:24:10.371127 (Thread-1): 09:24:10  On rpc.jaffle_shop.request: with payments as (
+   select * from ANALYTICS.dbt_dsalvati.stg_payments
+),
+
+pivoted as (
+    select 
+        order_id,
+        
+        sum(case 
+                when payment_method = 'bank_transfer'
+                    then amount 
+                else 0 
+            end
+        ) as bank_transfer_amount,
+        sum(case 
+                when payment_method = 'credit_card'
+                    then amount 
+                else 0 
+            end
+        ) as credit_card_amount,
+        sum(case 
+                when payment_method = 'coupon'
+                    then amount 
+                else 0 
+            end
+        ) as coupon_amount,
+        sum(case 
+                when payment_method = 'gift_card'
+                    then amount 
+                else 0 
+            end
+        ) as gift_card_amount
+)
+
+select * from pivoted
+limit 500
+/* limit added automatically by dbt cloud */
+2021-12-23 09:24:10.371209 (Thread-1): 09:24:10  Opening a new connection, currently in state init
+2021-12-23 09:24:10.864944 (Thread-81): handling poll request
+2021-12-23 09:24:10.865387 (Thread-81): 09:24:10  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fc059250>]}
+2021-12-23 09:24:10.866220 (Thread-81): sending response (<Response 4584 bytes [200 OK]>) to 10.0.34.21
+2021-12-23 09:24:11.173087 (Thread-1): 09:24:11  Snowflake adapter: Snowflake query id: 01a12334-0000-03e8-0000-000012292561
+2021-12-23 09:24:11.173307 (Thread-1): 09:24:11  Snowflake adapter: Snowflake error: 000904 (42000): SQL compilation error: error line 7 at position 8
+invalid identifier 'ORDER_ID'
+2021-12-23 09:24:11.173473 (Thread-1): 09:24:11  finished collecting timing info
+2021-12-23 09:24:11.173664 (Thread-1): 09:24:11  On rpc.jaffle_shop.request: Close
+2021-12-23 09:24:11.360958 (Thread-1): Got an exception: Database Error
+  000904 (42000): SQL compilation error: error line 7 at position 8
+  invalid identifier 'ORDER_ID'
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/snowflake/connections.py", line 204, in exception_handler
+    yield
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/sql/connections.py", line 74, in add_query
+    cursor.execute(sql, bindings)
+  File "/usr/local/lib/python3.8/dist-packages/snowflake/connector/cursor.py", line 790, in execute
+    Error.errorhandler_wrapper(
+  File "/usr/local/lib/python3.8/dist-packages/snowflake/connector/errors.py", line 272, in errorhandler_wrapper
+    handed_over = Error.hand_to_other_handler(
+  File "/usr/local/lib/python3.8/dist-packages/snowflake/connector/errors.py", line 327, in hand_to_other_handler
+    cursor.errorhandler(connection, cursor, error_class, error_value)
+  File "/usr/local/lib/python3.8/dist-packages/snowflake/connector/errors.py", line 206, in default_errorhandler
+    raise error_class(
+snowflake.connector.errors.ProgrammingError: 000904 (42000): SQL compilation error: error line 7 at position 8
+invalid identifier 'ORDER_ID'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/dbt/task/base.py", line 361, in safe_run
+    result = self.compile_and_execute(manifest, ctx)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/task/base.py", line 314, in compile_and_execute
+    result = self.run(ctx.node, manifest)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/task/base.py", line 403, in run
+    return self.execute(compiled_node, manifest)
+  File "/usr/local/lib/python3.8/dist-packages/dbt_rpc/rpc/node_runners.py", line 90, in execute
+    _, execute_result = self.adapter.execute(
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/base/impl.py", line 225, in execute
+    return self.connections.execute(
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/sql/connections.py", line 127, in execute
+    _, cursor = self.add_query(sql, auto_begin)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/snowflake/connections.py", line 431, in add_query
+    connection, cursor = super().add_query(
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/sql/connections.py", line 83, in add_query
+    return connection, cursor
+  File "/usr/lib/python3.8/contextlib.py", line 131, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/snowflake/connections.py", line 221, in exception_handler
+    raise DatabaseException(msg)
+dbt.exceptions.DatabaseException: Database Error
+  000904 (42000): SQL compilation error: error line 7 at position 8
+  invalid identifier 'ORDER_ID'
+2021-12-23 09:24:11.361942 (Thread-1): Got exception RPCException(10003, Database Error, {'type': 'DatabaseException', 'message': "Database Error in rpc request (from remote system)\n  000904 (42000): SQL compilation error: error line 7 at position 8\n  invalid identifier 'ORDER_ID'", 'raw_sql': "{%- set payment_methods = ['bank_transfer', 'credit_card', 'coupon', 'gift_card']  -%}\n\nwith payments as (\n   select * from {{ ref('stg_payments') }}\n),\n\npivoted as (\n    select \n        order_id,\n        {% for payment_method in payment_methods %}\n        sum(case \n                when payment_method = '{{ payment_method }}'\n                    then amount \n                else 0 \n            end\n        ) as {{ payment_method }}_amount\n        {%- if not loop.last -%}\n        ,\n        {%- else -%}\n        {%- endif -%}\n        {% endfor %}\n)\n\nselect * from pivoted\nlimit 500\n/* limit added automatically by dbt cloud */", 'compiled_sql': "with payments as (\n   select * from ANALYTICS.dbt_dsalvati.stg_payments\n),\n\npivoted as (\n    select \n        order_id,\n        \n        sum(case \n                when payment_method = 'bank_transfer'\n                    then amount \n                else 0 \n            end\n        ) as bank_transfer_amount,\n        sum(case \n                when payment_method = 'credit_card'\n                    then amount \n                else 0 \n            end\n        ) as credit_card_amount,\n        sum(case \n                when payment_method = 'coupon'\n                    then amount \n                else 0 \n            end\n        ) as coupon_amount,\n        sum(case \n                when payment_method = 'gift_card'\n                    then amount \n                else 0 \n            end\n        ) as gift_card_amount\n)\n\nselect * from pivoted\nlimit 500\n/* limit added automatically by dbt cloud */", 'tags': None}, None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/dbt_rpc/task/sql_commands.py", line 147, in _in_thread
+    self.node_results.append(runner.safe_run(self.manifest))
+  File "/usr/local/lib/python3.8/dist-packages/dbt/task/base.py", line 377, in safe_run
+    result = self.error_result(ctx.node, error, started, [])
+  File "/usr/local/lib/python3.8/dist-packages/dbt_rpc/rpc/node_runners.py", line 56, in error_result
+    raise error
+dbt_rpc.rpc.error.RPCException: RPCException(10003, Database Error, {'type': 'DatabaseException', 'message': "Database Error in rpc request (from remote system)\n  000904 (42000): SQL compilation error: error line 7 at position 8\n  invalid identifier 'ORDER_ID'", 'raw_sql': "{%- set payment_methods = ['bank_transfer', 'credit_card', 'coupon', 'gift_card']  -%}\n\nwith payments as (\n   select * from {{ ref('stg_payments') }}\n),\n\npivoted as (\n    select \n        order_id,\n        {% for payment_method in payment_methods %}\n        sum(case \n                when payment_method = '{{ payment_method }}'\n                    then amount \n                else 0 \n            end\n        ) as {{ payment_method }}_amount\n        {%- if not loop.last -%}\n        ,\n        {%- else -%}\n        {%- endif -%}\n        {% endfor %}\n)\n\nselect * from pivoted\nlimit 500\n/* limit added automatically by dbt cloud */", 'compiled_sql': "with payments as (\n   select * from ANALYTICS.dbt_dsalvati.stg_payments\n),\n\npivoted as (\n    select \n        order_id,\n        \n        sum(case \n                when payment_method = 'bank_transfer'\n                    then amount \n                else 0 \n            end\n        ) as bank_transfer_amount,\n        sum(case \n                when payment_method = 'credit_card'\n                    then amount \n                else 0 \n            end\n        ) as credit_card_amount,\n        sum(case \n                when payment_method = 'coupon'\n                    then amount \n                else 0 \n            end\n        ) as coupon_amount,\n        sum(case \n                when payment_method = 'gift_card'\n                    then amount \n                else 0 \n            end\n        ) as gift_card_amount\n)\n\nselect * from pivoted\nlimit 500\n/* limit added automatically by dbt cloud */", 'tags': None}, None)
+2021-12-23 09:24:12.413920 (Thread-82): handling poll request
+2021-12-23 09:24:12.414295 (Thread-82): 09:24:12  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fc059670>]}
+2021-12-23 09:24:12.414896 (Thread-82): sending response (<Response 15272 bytes [200 OK]>) to 10.0.35.231
+2021-12-23 09:25:06.782439 (Thread-83): handling status request
+2021-12-23 09:25:06.782818 (Thread-83): 09:25:06  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fc059bb0>]}
+2021-12-23 09:25:06.783385 (Thread-83): sending response (<Response 2016 bytes [200 OK]>) to 10.0.23.128
+2021-12-23 09:25:07.115318 (Thread-84): handling compile_sql request
+2021-12-23 09:25:07.115694 (Thread-84): 09:25:07  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fc059eb0>]}
+2021-12-23 09:25:09.275669 (Thread-84): sending response (<Response 138 bytes [200 OK]>) to 10.0.7.207
+2021-12-23 09:25:09.305527 (MainThread): 09:25:09  Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '4eb5b69b-9969-4c03-bd01-33aa8207a41b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f71d50d1f10>]}
+2021-12-23 09:25:09.306054 (MainThread): 09:25:09  Found 6 models, 7 tests, 0 snapshots, 0 analyses, 179 macros, 0 operations, 0 seed files, 3 sources, 0 exposures, 0 metrics
+2021-12-23 09:25:09.306633 (Thread-1): 09:25:09  Acquiring new snowflake connection "rpc.jaffle_shop.request"
+2021-12-23 09:25:09.306767 (Thread-1): 09:25:09  Began compiling node rpc.jaffle_shop.request
+2021-12-23 09:25:09.306868 (Thread-1): 09:25:09  Compiling rpc.jaffle_shop.request
+2021-12-23 09:25:09.310013 (Thread-1): 09:25:09  finished collecting timing info
+2021-12-23 09:25:09.310140 (Thread-1): 09:25:09  Began executing node rpc.jaffle_shop.request
+2021-12-23 09:25:09.310237 (Thread-1): 09:25:09  finished collecting timing info
+2021-12-23 09:25:09.772892 (Thread-85): handling poll request
+2021-12-23 09:25:09.773327 (Thread-85): 09:25:09  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fc071100>]}
+2021-12-23 09:25:09.774393 (Thread-85): sending response (<Response 8263 bytes [200 OK]>) to 10.0.4.10
+2021-12-23 09:25:15.956019 (Thread-86): handling status request
+2021-12-23 09:25:15.956400 (Thread-86): 09:25:15  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fc0712b0>]}
+2021-12-23 09:25:15.978793 (Thread-86): sending response (<Response 2016 bytes [200 OK]>) to 10.0.35.231
+2021-12-23 09:25:16.452616 (Thread-87): handling compile_sql request
+2021-12-23 09:25:16.452981 (Thread-87): 09:25:16  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fc071490>]}
+2021-12-23 09:25:18.619622 (Thread-87): sending response (<Response 138 bytes [200 OK]>) to 10.0.34.21
+2021-12-23 09:25:18.646193 (MainThread): 09:25:18  Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '8b5666ed-d802-4239-a56b-aebbb3690da4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe43adb1d90>]}
+2021-12-23 09:25:18.646711 (MainThread): 09:25:18  Found 6 models, 7 tests, 0 snapshots, 0 analyses, 179 macros, 0 operations, 0 seed files, 3 sources, 0 exposures, 0 metrics
+2021-12-23 09:25:18.647306 (Thread-1): 09:25:18  Acquiring new snowflake connection "rpc.jaffle_shop.request"
+2021-12-23 09:25:18.647438 (Thread-1): 09:25:18  Began compiling node rpc.jaffle_shop.request
+2021-12-23 09:25:18.647541 (Thread-1): 09:25:18  Compiling rpc.jaffle_shop.request
+2021-12-23 09:25:18.650602 (Thread-1): 09:25:18  finished collecting timing info
+2021-12-23 09:25:18.650731 (Thread-1): 09:25:18  Began executing node rpc.jaffle_shop.request
+2021-12-23 09:25:18.650828 (Thread-1): 09:25:18  finished collecting timing info
+2021-12-23 09:25:18.978239 (Thread-88): handling poll request
+2021-12-23 09:25:18.978726 (Thread-88): 09:25:18  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2dc1b65b0>]}
+2021-12-23 09:25:18.979825 (Thread-88): sending response (<Response 8184 bytes [200 OK]>) to 10.0.26.158
+2021-12-23 09:25:22.931621 (Thread-89): handling status request
+2021-12-23 09:25:22.931995 (Thread-89): 09:25:22  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2dc1b6520>]}
+2021-12-23 09:25:22.932515 (Thread-89): sending response (<Response 2016 bytes [200 OK]>) to 10.0.6.80
+2021-12-23 09:25:23.291016 (Thread-90): handling compile_sql request
+2021-12-23 09:25:23.291405 (Thread-90): 09:25:23  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2dc1b6b50>]}
+2021-12-23 09:25:25.498365 (Thread-90): sending response (<Response 138 bytes [200 OK]>) to 10.0.23.130
+2021-12-23 09:25:25.525089 (MainThread): 09:25:25  Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'e77447bc-7e03-4930-a20e-36652c1a9494', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0b2cd71d60>]}
+2021-12-23 09:25:25.525614 (MainThread): 09:25:25  Found 6 models, 7 tests, 0 snapshots, 0 analyses, 179 macros, 0 operations, 0 seed files, 3 sources, 0 exposures, 0 metrics
+2021-12-23 09:25:25.526185 (Thread-1): 09:25:25  Acquiring new snowflake connection "rpc.jaffle_shop.request"
+2021-12-23 09:25:25.526315 (Thread-1): 09:25:25  Began compiling node rpc.jaffle_shop.request
+2021-12-23 09:25:25.526405 (Thread-1): 09:25:25  Compiling rpc.jaffle_shop.request
+2021-12-23 09:25:25.529565 (Thread-1): 09:25:25  finished collecting timing info
+2021-12-23 09:25:25.529694 (Thread-1): 09:25:25  Began executing node rpc.jaffle_shop.request
+2021-12-23 09:25:25.529789 (Thread-1): 09:25:25  finished collecting timing info
+2021-12-23 09:25:25.938021 (Thread-91): handling poll request
+2021-12-23 09:25:25.938459 (Thread-91): 09:25:25  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2dc1bac10>]}
+2021-12-23 09:25:25.939572 (Thread-91): sending response (<Response 8147 bytes [200 OK]>) to 10.0.23.128
+2021-12-23 09:25:32.316292 (Thread-92): handling status request
+2021-12-23 09:25:32.316660 (Thread-92): 09:25:32  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2dc1badc0>]}
+2021-12-23 09:25:32.317187 (Thread-92): sending response (<Response 2016 bytes [200 OK]>) to 10.0.4.163
+2021-12-23 09:25:32.783733 (Thread-93): handling compile_sql request
+2021-12-23 09:25:32.784099 (Thread-93): 09:25:32  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2dc1c5130>]}
+2021-12-23 09:25:34.960734 (Thread-93): sending response (<Response 138 bytes [200 OK]>) to 10.0.23.128
+2021-12-23 09:25:34.987347 (MainThread): 09:25:34  Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '7920589d-41df-4e5d-94e7-682b3e38151c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f500cf01e20>]}
+2021-12-23 09:25:34.987882 (MainThread): 09:25:34  Found 6 models, 7 tests, 0 snapshots, 0 analyses, 179 macros, 0 operations, 0 seed files, 3 sources, 0 exposures, 0 metrics
+2021-12-23 09:25:34.988491 (Thread-1): 09:25:34  Acquiring new snowflake connection "rpc.jaffle_shop.request"
+2021-12-23 09:25:34.988620 (Thread-1): 09:25:34  Began compiling node rpc.jaffle_shop.request
+2021-12-23 09:25:34.988713 (Thread-1): 09:25:34  Compiling rpc.jaffle_shop.request
+2021-12-23 09:25:34.991801 (Thread-1): 09:25:34  finished collecting timing info
+2021-12-23 09:25:34.991929 (Thread-1): 09:25:34  Began executing node rpc.jaffle_shop.request
+2021-12-23 09:25:34.992026 (Thread-1): 09:25:34  finished collecting timing info
+2021-12-23 09:25:35.488028 (Thread-94): handling poll request
+2021-12-23 09:25:35.488457 (Thread-94): 09:25:35  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2dc1ba670>]}
+2021-12-23 09:25:35.489589 (Thread-94): sending response (<Response 8184 bytes [200 OK]>) to 10.0.22.219
+2021-12-23 09:25:47.721804 (Thread-95): handling status request
+2021-12-23 09:25:47.722203 (Thread-95): 09:25:47  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2dc1b6340>]}
+2021-12-23 09:25:47.722765 (Thread-95): sending response (<Response 2016 bytes [200 OK]>) to 10.0.7.207
+2021-12-23 09:25:48.049263 (Thread-96): handling compile_sql request
+2021-12-23 09:25:48.049646 (Thread-96): 09:25:48  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fc052b50>]}
+2021-12-23 09:25:50.225902 (Thread-96): sending response (<Response 138 bytes [200 OK]>) to 10.0.7.207
+2021-12-23 09:25:50.252048 (MainThread): 09:25:50  Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'dd2d6d1f-36de-4de5-aba8-536938116dd9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc82b730e50>]}
+2021-12-23 09:25:50.252554 (MainThread): 09:25:50  Found 6 models, 7 tests, 0 snapshots, 0 analyses, 179 macros, 0 operations, 0 seed files, 3 sources, 0 exposures, 0 metrics
+2021-12-23 09:25:50.253139 (Thread-1): 09:25:50  Acquiring new snowflake connection "rpc.jaffle_shop.request"
+2021-12-23 09:25:50.253271 (Thread-1): 09:25:50  Began compiling node rpc.jaffle_shop.request
+2021-12-23 09:25:50.253362 (Thread-1): 09:25:50  Compiling rpc.jaffle_shop.request
+2021-12-23 09:25:50.256446 (Thread-1): 09:25:50  finished collecting timing info
+2021-12-23 09:25:50.256574 (Thread-1): 09:25:50  Began executing node rpc.jaffle_shop.request
+2021-12-23 09:25:50.256669 (Thread-1): 09:25:50  finished collecting timing info
+2021-12-23 09:25:50.737907 (Thread-97): handling poll request
+2021-12-23 09:25:50.738362 (Thread-97): 09:25:50  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2dc1d3040>]}
+2021-12-23 09:25:50.739455 (Thread-97): sending response (<Response 8263 bytes [200 OK]>) to 10.0.37.31
+2021-12-23 09:28:00.682861 (Thread-98): handling status request
+2021-12-23 09:28:00.684657 (Thread-98): 09:28:00  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2dc1d31f0>]}
+2021-12-23 09:28:00.685207 (Thread-98): sending response (<Response 2016 bytes [200 OK]>) to 10.0.23.130
+2021-12-23 09:28:01.121180 (Thread-99): handling compile_sql request
+2021-12-23 09:28:01.121580 (Thread-99): 09:28:01  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2dc1d35e0>]}
+2021-12-23 09:28:03.331961 (Thread-99): sending response (<Response 138 bytes [200 OK]>) to 10.0.6.80
+2021-12-23 09:28:03.362131 (MainThread): 09:28:03  Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'e1ec9073-c87b-44a4-bf45-ecdf3f1af240', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5ed0e56f10>]}
+2021-12-23 09:28:03.362677 (MainThread): 09:28:03  Found 6 models, 7 tests, 0 snapshots, 0 analyses, 179 macros, 0 operations, 0 seed files, 3 sources, 0 exposures, 0 metrics
+2021-12-23 09:28:03.363296 (Thread-1): 09:28:03  Acquiring new snowflake connection "rpc.jaffle_shop.request"
+2021-12-23 09:28:03.363425 (Thread-1): 09:28:03  Began compiling node rpc.jaffle_shop.request
+2021-12-23 09:28:03.363514 (Thread-1): 09:28:03  Compiling rpc.jaffle_shop.request
+2021-12-23 09:28:03.367520 (Thread-1): 09:28:03  finished collecting timing info
+2021-12-23 09:28:03.367683 (Thread-1): 09:28:03  Began executing node rpc.jaffle_shop.request
+2021-12-23 09:28:03.367789 (Thread-1): 09:28:03  finished collecting timing info
+2021-12-23 09:28:03.803820 (Thread-100): handling poll request
+2021-12-23 09:28:03.804258 (Thread-100): 09:28:03  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2dc1d87c0>]}
+2021-12-23 09:28:03.805335 (Thread-100): sending response (<Response 8172 bytes [200 OK]>) to 10.0.33.13
+2021-12-23 09:28:16.661895 (Thread-101): handling status request
+2021-12-23 09:28:16.662277 (Thread-101): 09:28:16  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2dc1d8970>]}
+2021-12-23 09:28:16.662822 (Thread-101): sending response (<Response 2016 bytes [200 OK]>) to 10.0.4.10
+2021-12-23 09:28:17.076640 (Thread-102): handling run_sql request
+2021-12-23 09:28:17.077016 (Thread-102): 09:28:17  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2dc1d8d60>]}
+2021-12-23 09:28:19.221736 (Thread-102): sending response (<Response 138 bytes [200 OK]>) to 10.0.33.13
+2021-12-23 09:28:19.246229 (MainThread): 09:28:19  Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '465dc343-50a5-4f7a-ad29-517d2eb89502', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6fe185be20>]}
+2021-12-23 09:28:19.246744 (MainThread): 09:28:19  Found 6 models, 7 tests, 0 snapshots, 0 analyses, 179 macros, 0 operations, 0 seed files, 3 sources, 0 exposures, 0 metrics
+2021-12-23 09:28:19.247355 (Thread-1): 09:28:19  Acquiring new snowflake connection "rpc.jaffle_shop.request"
+2021-12-23 09:28:19.247486 (Thread-1): 09:28:19  Began compiling node rpc.jaffle_shop.request
+2021-12-23 09:28:19.247579 (Thread-1): 09:28:19  Compiling rpc.jaffle_shop.request
+2021-12-23 09:28:19.250646 (Thread-1): 09:28:19  finished collecting timing info
+2021-12-23 09:28:19.250777 (Thread-1): 09:28:19  Began executing node rpc.jaffle_shop.request
+2021-12-23 09:28:19.251920 (Thread-1): 09:28:19  Using snowflake connection "rpc.jaffle_shop.request"
+2021-12-23 09:28:19.252015 (Thread-1): 09:28:19  On rpc.jaffle_shop.request: with payments as (
+   select * from ANALYTICS.dbt_dsalvati.stg_payments
+),
+
+pivoted as (
+    select 
+        order_id,
+        
+        
+        sum(case 
+                when payment_method = 'bank_transfer'
+                    then amount 
+                else 0 
+            end
+        ) as bank_transfer_amount,
+        sum(case 
+                when payment_method = 'credit_card'
+                    then amount 
+                else 0 
+            end
+        ) as credit_card_amount,
+        sum(case 
+                when payment_method = 'coupon'
+                    then amount 
+                else 0 
+            end
+        ) as coupon_amount,
+        sum(case 
+                when payment_method = 'gift_card'
+                    then amount 
+                else 0 
+            end
+        ) as gift_card_amountfrom payments
+    group by 1
+)
+
+select * from pivoted
+limit 500
+/* limit added automatically by dbt cloud */
+2021-12-23 09:28:19.252096 (Thread-1): 09:28:19  Opening a new connection, currently in state init
+2021-12-23 09:28:19.732412 (Thread-103): handling poll request
+2021-12-23 09:28:19.732847 (Thread-103): 09:28:19  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2dc1cee80>]}
+2021-12-23 09:28:19.733680 (Thread-103): sending response (<Response 4623 bytes [200 OK]>) to 10.0.34.21
+2021-12-23 09:28:20.101173 (Thread-1): 09:28:20  Snowflake adapter: Snowflake query id: 01a12338-0000-03e4-0000-000012291501
+2021-12-23 09:28:20.101400 (Thread-1): 09:28:20  Snowflake adapter: Snowflake error: 001003 (42000): SQL compilation error:
+syntax error line 33 at position 34 unexpected 'payments'.
+2021-12-23 09:28:20.101569 (Thread-1): 09:28:20  finished collecting timing info
+2021-12-23 09:28:20.101754 (Thread-1): 09:28:20  On rpc.jaffle_shop.request: Close
+2021-12-23 09:28:20.280139 (Thread-1): Got an exception: Database Error
+  001003 (42000): SQL compilation error:
+  syntax error line 33 at position 34 unexpected 'payments'.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/snowflake/connections.py", line 204, in exception_handler
+    yield
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/sql/connections.py", line 74, in add_query
+    cursor.execute(sql, bindings)
+  File "/usr/local/lib/python3.8/dist-packages/snowflake/connector/cursor.py", line 790, in execute
+    Error.errorhandler_wrapper(
+  File "/usr/local/lib/python3.8/dist-packages/snowflake/connector/errors.py", line 272, in errorhandler_wrapper
+    handed_over = Error.hand_to_other_handler(
+  File "/usr/local/lib/python3.8/dist-packages/snowflake/connector/errors.py", line 327, in hand_to_other_handler
+    cursor.errorhandler(connection, cursor, error_class, error_value)
+  File "/usr/local/lib/python3.8/dist-packages/snowflake/connector/errors.py", line 206, in default_errorhandler
+    raise error_class(
+snowflake.connector.errors.ProgrammingError: 001003 (42000): SQL compilation error:
+syntax error line 33 at position 34 unexpected 'payments'.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/dbt/task/base.py", line 361, in safe_run
+    result = self.compile_and_execute(manifest, ctx)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/task/base.py", line 314, in compile_and_execute
+    result = self.run(ctx.node, manifest)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/task/base.py", line 403, in run
+    return self.execute(compiled_node, manifest)
+  File "/usr/local/lib/python3.8/dist-packages/dbt_rpc/rpc/node_runners.py", line 90, in execute
+    _, execute_result = self.adapter.execute(
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/base/impl.py", line 225, in execute
+    return self.connections.execute(
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/sql/connections.py", line 127, in execute
+    _, cursor = self.add_query(sql, auto_begin)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/snowflake/connections.py", line 431, in add_query
+    connection, cursor = super().add_query(
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/sql/connections.py", line 83, in add_query
+    return connection, cursor
+  File "/usr/lib/python3.8/contextlib.py", line 131, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/usr/local/lib/python3.8/dist-packages/dbt/adapters/snowflake/connections.py", line 221, in exception_handler
+    raise DatabaseException(msg)
+dbt.exceptions.DatabaseException: Database Error
+  001003 (42000): SQL compilation error:
+  syntax error line 33 at position 34 unexpected 'payments'.
+2021-12-23 09:28:20.281247 (Thread-1): Got exception RPCException(10003, Database Error, {'type': 'DatabaseException', 'message': "Database Error in rpc request (from remote system)\n  001003 (42000): SQL compilation error:\n  syntax error line 33 at position 34 unexpected 'payments'.", 'raw_sql': "{%- set payment_methods = ['bank_transfer', 'credit_card', 'coupon', 'gift_card']  -%}\n\nwith payments as (\n   select * from {{ ref('stg_payments') }}\n),\n\npivoted as (\n    select \n        order_id,\n        \n        {% for payment_method in payment_methods %}\n        sum(case \n                when payment_method = '{{ payment_method }}'\n                    then amount \n                else 0 \n            end\n        ) as {{ payment_method }}_amount\n        {%- if not loop.last -%}\n        ,\n        {%- else -%}\n        {%- endif -%}\n        {%- endfor -%}\n\n    from payments\n    group by 1\n)\n\nselect * from pivoted\nlimit 500\n/* limit added automatically by dbt cloud */", 'compiled_sql': "with payments as (\n   select * from ANALYTICS.dbt_dsalvati.stg_payments\n),\n\npivoted as (\n    select \n        order_id,\n        \n        \n        sum(case \n                when payment_method = 'bank_transfer'\n                    then amount \n                else 0 \n            end\n        ) as bank_transfer_amount,\n        sum(case \n                when payment_method = 'credit_card'\n                    then amount \n                else 0 \n            end\n        ) as credit_card_amount,\n        sum(case \n                when payment_method = 'coupon'\n                    then amount \n                else 0 \n            end\n        ) as coupon_amount,\n        sum(case \n                when payment_method = 'gift_card'\n                    then amount \n                else 0 \n            end\n        ) as gift_card_amountfrom payments\n    group by 1\n)\n\nselect * from pivoted\nlimit 500\n/* limit added automatically by dbt cloud */", 'tags': None}, None)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/dbt_rpc/task/sql_commands.py", line 147, in _in_thread
+    self.node_results.append(runner.safe_run(self.manifest))
+  File "/usr/local/lib/python3.8/dist-packages/dbt/task/base.py", line 377, in safe_run
+    result = self.error_result(ctx.node, error, started, [])
+  File "/usr/local/lib/python3.8/dist-packages/dbt_rpc/rpc/node_runners.py", line 56, in error_result
+    raise error
+dbt_rpc.rpc.error.RPCException: RPCException(10003, Database Error, {'type': 'DatabaseException', 'message': "Database Error in rpc request (from remote system)\n  001003 (42000): SQL compilation error:\n  syntax error line 33 at position 34 unexpected 'payments'.", 'raw_sql': "{%- set payment_methods = ['bank_transfer', 'credit_card', 'coupon', 'gift_card']  -%}\n\nwith payments as (\n   select * from {{ ref('stg_payments') }}\n),\n\npivoted as (\n    select \n        order_id,\n        \n        {% for payment_method in payment_methods %}\n        sum(case \n                when payment_method = '{{ payment_method }}'\n                    then amount \n                else 0 \n            end\n        ) as {{ payment_method }}_amount\n        {%- if not loop.last -%}\n        ,\n        {%- else -%}\n        {%- endif -%}\n        {%- endfor -%}\n\n    from payments\n    group by 1\n)\n\nselect * from pivoted\nlimit 500\n/* limit added automatically by dbt cloud */", 'compiled_sql': "with payments as (\n   select * from ANALYTICS.dbt_dsalvati.stg_payments\n),\n\npivoted as (\n    select \n        order_id,\n        \n        \n        sum(case \n                when payment_method = 'bank_transfer'\n                    then amount \n                else 0 \n            end\n        ) as bank_transfer_amount,\n        sum(case \n                when payment_method = 'credit_card'\n                    then amount \n                else 0 \n            end\n        ) as credit_card_amount,\n        sum(case \n                when payment_method = 'coupon'\n                    then amount \n                else 0 \n            end\n        ) as coupon_amount,\n        sum(case \n                when payment_method = 'gift_card'\n                    then amount \n                else 0 \n            end\n        ) as gift_card_amountfrom payments\n    group by 1\n)\n\nselect * from pivoted\nlimit 500\n/* limit added automatically by dbt cloud */", 'tags': None}, None)
+2021-12-23 09:28:21.050730 (Thread-104): handling poll request
+2021-12-23 09:28:21.051128 (Thread-104): 09:28:21  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2dc1c5df0>]}
+2021-12-23 09:28:21.051754 (Thread-104): sending response (<Response 15601 bytes [200 OK]>) to 10.0.4.163
+2021-12-23 09:28:22.905302 (Thread-105): handling status request
+2021-12-23 09:28:22.905670 (Thread-105): 09:28:22  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fc0385e0>]}
+2021-12-23 09:28:22.906189 (Thread-105): sending response (<Response 2016 bytes [200 OK]>) to 10.0.1.233
+2021-12-23 09:28:23.520807 (Thread-106): handling compile_sql request
+2021-12-23 09:28:23.521170 (Thread-106): 09:28:23  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2fc0ea460>]}
+2021-12-23 09:28:25.675188 (Thread-106): sending response (<Response 138 bytes [200 OK]>) to 10.0.6.80
+2021-12-23 09:28:25.701428 (MainThread): 09:28:25  Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '3367f422-4af1-4e11-b833-ce7f2f4b5bca', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f592cd1be80>]}
+2021-12-23 09:28:25.701951 (MainThread): 09:28:25  Found 6 models, 7 tests, 0 snapshots, 0 analyses, 179 macros, 0 operations, 0 seed files, 3 sources, 0 exposures, 0 metrics
+2021-12-23 09:28:25.702530 (Thread-1): 09:28:25  Acquiring new snowflake connection "rpc.jaffle_shop.request"
+2021-12-23 09:28:25.702664 (Thread-1): 09:28:25  Began compiling node rpc.jaffle_shop.request
+2021-12-23 09:28:25.702766 (Thread-1): 09:28:25  Compiling rpc.jaffle_shop.request
+2021-12-23 09:28:25.705926 (Thread-1): 09:28:25  finished collecting timing info
+2021-12-23 09:28:25.706054 (Thread-1): 09:28:25  Began executing node rpc.jaffle_shop.request
+2021-12-23 09:28:25.706152 (Thread-1): 09:28:25  finished collecting timing info
+2021-12-23 09:28:26.184682 (Thread-107): handling poll request
+2021-12-23 09:28:26.185158 (Thread-107): 09:28:26  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2dc1e90d0>]}
+2021-12-23 09:28:26.186285 (Thread-107): sending response (<Response 8248 bytes [200 OK]>) to 10.0.20.71
+2021-12-23 09:28:50.842829 (Thread-108): handling status request
+2021-12-23 09:28:50.843259 (Thread-108): 09:28:50  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2dc1e9580>]}
+2021-12-23 09:28:50.843804 (Thread-108): sending response (<Response 2016 bytes [200 OK]>) to 10.0.35.231
+2021-12-23 09:28:51.312680 (Thread-109): handling compile_sql request
+2021-12-23 09:28:51.313040 (Thread-109): 09:28:51  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2dc1e99d0>]}
+2021-12-23 09:28:53.482828 (Thread-109): sending response (<Response 138 bytes [200 OK]>) to 10.0.23.130
+2021-12-23 09:28:53.509161 (MainThread): 09:28:53  Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'a4cedc68-2216-4a6f-a5ff-3e21fd16abcb', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1bf466dd90>]}
+2021-12-23 09:28:53.509686 (MainThread): 09:28:53  Found 6 models, 7 tests, 0 snapshots, 0 analyses, 179 macros, 0 operations, 0 seed files, 3 sources, 0 exposures, 0 metrics
+2021-12-23 09:28:53.510254 (Thread-1): 09:28:53  Acquiring new snowflake connection "rpc.jaffle_shop.request"
+2021-12-23 09:28:53.510383 (Thread-1): 09:28:53  Began compiling node rpc.jaffle_shop.request
+2021-12-23 09:28:53.510473 (Thread-1): 09:28:53  Compiling rpc.jaffle_shop.request
+2021-12-23 09:28:53.513527 (Thread-1): 09:28:53  finished collecting timing info
+2021-12-23 09:28:53.513653 (Thread-1): 09:28:53  Began executing node rpc.jaffle_shop.request
+2021-12-23 09:28:53.513749 (Thread-1): 09:28:53  finished collecting timing info
+2021-12-23 09:28:53.904511 (Thread-110): handling poll request
+2021-12-23 09:28:53.904962 (Thread-110): 09:28:53  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2dc1f2b20>]}
+2021-12-23 09:28:53.906451 (Thread-110): sending response (<Response 8222 bytes [200 OK]>) to 10.0.23.128
+2021-12-23 09:28:59.566865 (Thread-111): handling status request
+2021-12-23 09:28:59.567293 (Thread-111): 09:28:59  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2dc1d3eb0>]}
+2021-12-23 09:28:59.567859 (Thread-111): sending response (<Response 2016 bytes [200 OK]>) to 10.0.23.130
+2021-12-23 09:29:00.366049 (Thread-112): handling run_sql request
+2021-12-23 09:29:00.366436 (Thread-112): 09:29:00  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2dc1e29a0>]}
+2021-12-23 09:29:02.556501 (Thread-112): sending response (<Response 138 bytes [200 OK]>) to 10.0.23.130
+2021-12-23 09:29:02.583426 (MainThread): 09:29:02  Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '7f59daad-e99a-48ab-a670-a9731e3c176d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb3f23b0e20>]}
+2021-12-23 09:29:02.583964 (MainThread): 09:29:02  Found 6 models, 7 tests, 0 snapshots, 0 analyses, 179 macros, 0 operations, 0 seed files, 3 sources, 0 exposures, 0 metrics
+2021-12-23 09:29:02.584575 (Thread-1): 09:29:02  Acquiring new snowflake connection "rpc.jaffle_shop.request"
+2021-12-23 09:29:02.584703 (Thread-1): 09:29:02  Began compiling node rpc.jaffle_shop.request
+2021-12-23 09:29:02.584794 (Thread-1): 09:29:02  Compiling rpc.jaffle_shop.request
+2021-12-23 09:29:02.587933 (Thread-1): 09:29:02  finished collecting timing info
+2021-12-23 09:29:02.588062 (Thread-1): 09:29:02  Began executing node rpc.jaffle_shop.request
+2021-12-23 09:29:02.589189 (Thread-1): 09:29:02  Using snowflake connection "rpc.jaffle_shop.request"
+2021-12-23 09:29:02.589281 (Thread-1): 09:29:02  On rpc.jaffle_shop.request: with payments as (
+   select * from ANALYTICS.dbt_dsalvati.stg_payments
+),
+
+pivoted as (
+    select 
+        order_id,
+        
+        sum(case 
+                when payment_method = 'bank_transfer'
+                    then amount 
+                else 0 
+            end
+        ) as bank_transfer_amount,
+        sum(case 
+                when payment_method = 'credit_card'
+                    then amount 
+                else 0 
+            end
+        ) as credit_card_amount,
+        sum(case 
+                when payment_method = 'coupon'
+                    then amount 
+                else 0 
+            end
+        ) as coupon_amount,
+        sum(case 
+                when payment_method = 'gift_card'
+                    then amount 
+                else 0 
+            end
+        ) as gift_card_amount
+
+    from payments
+    group by 1
+)
+
+select * from pivoted
+limit 500
+/* limit added automatically by dbt cloud */
+2021-12-23 09:29:02.589362 (Thread-1): 09:29:02  Opening a new connection, currently in state init
+2021-12-23 09:29:03.228206 (Thread-113): handling poll request
+2021-12-23 09:29:03.228650 (Thread-113): 09:29:03  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2dc17b6a0>]}
+2021-12-23 09:29:03.229507 (Thread-113): sending response (<Response 4621 bytes [200 OK]>) to 10.0.26.158
+2021-12-23 09:29:03.500853 (Thread-1): 09:29:03  SQL status: SUCCESS 99 in 0.91 seconds
+2021-12-23 09:29:03.505203 (Thread-1): 09:29:03  finished collecting timing info
+2021-12-23 09:29:03.505433 (Thread-1): 09:29:03  On rpc.jaffle_shop.request: Close
+2021-12-23 09:29:04.573502 (Thread-114): handling poll request
+2021-12-23 09:29:04.573900 (Thread-114): 09:29:04  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2dc17bcd0>]}
+2021-12-23 09:29:04.575212 (Thread-114): sending response (<Response 9357 bytes [200 OK]>) to 10.0.20.71
+2021-12-23 09:29:29.231773 (Thread-115): 09:29:29  Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+2021-12-23 09:29:29.232222 (Thread-115): 09:29:29  Partial parsing: updated file: jaffle_shop://models/mart/core/int_orders__pivoted.sql
+2021-12-23 09:29:29.236993 (Thread-115): 09:29:29  1603: static parser failed on mart/core/int_orders__pivoted.sql
+2021-12-23 09:29:29.241726 (Thread-115): 09:29:29  1602: parser fallback to jinja rendering on mart/core/int_orders__pivoted.sql
+2021-12-23 09:29:29.291562 (Thread-115): 09:29:29  [WARNING]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.jaffle_shop.example
+
+2021-12-23 09:29:29.296798 (Thread-115): 09:29:29  Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2dc096e80>]}
+2021-12-23 09:29:29.938158 (Thread-116): handling status request
+2021-12-23 09:29:29.938640 (Thread-116): 09:29:29  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2dc17b9a0>]}
+2021-12-23 09:29:29.961916 (Thread-116): sending response (<Response 2332 bytes [200 OK]>) to 10.0.20.71
+2021-12-23 09:29:30.011205 (Thread-117): handling status request
+2021-12-23 09:29:30.011562 (Thread-117): 09:29:30  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2dc0f3a00>]}
+2021-12-23 09:29:30.012033 (Thread-117): sending response (<Response 2332 bytes [200 OK]>) to 10.0.37.31
+2021-12-23 09:29:48.182867 (Thread-118): handling status request
+2021-12-23 09:29:48.183332 (Thread-118): 09:29:48  Sending event: {'category': 'dbt', 'action': 'rpc_request', 'label': 'c3b33dbe-2123-4996-89fa-4e719e5c204d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff2dc096df0>]}
+2021-12-23 09:29:48.183832 (Thread-118): sending response (<Response 2332 bytes [200 OK]>) to 10.0.37.31
